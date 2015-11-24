@@ -1,5 +1,5 @@
 # -*- mode: Makefile; -*-
-# Copyright (c) 2011 Bitcoin Developers
+# Copyright (c) 2011 Evotion Developers
 # Distributed under the MIT/X11 software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -77,7 +77,7 @@ OBJS= \
     obj/miner.o \
     obj/net.o \
     obj/protocol.o \
-    obj/bitcoinrpc.o \
+    obj/evotionrpc.o \
     obj/rpcdump.o \
     obj/rpcnet.o \
     obj/rpcmining.o \

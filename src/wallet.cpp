@@ -1,5 +1,5 @@
-// Copyright (c) 2009-2010 Satoshi Nakamoto
-// Copyright (c) 2009-2012 The Bitcoin developers
+// Copyright (c) 2015 Evoshi Un
+// Copyright (c) 2015 Evotion
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -1402,7 +1402,7 @@ bool CWallet::CreateTransaction(const vector<pair<CScript, int64_t> >& vecSend, 
                 {
                     // Fill a vout to ourself
                     // TODO: pass in scriptChange instead of reservekey so
-                    // change transaction isn't always pay-to-bitcoin-address
+                    // change transaction isn't always pay-to-evotion-address
                     CScript scriptChange;
 
                     // coin control: send change to custom address
@@ -1477,7 +1477,7 @@ bool CWallet::CreateTransaction(CScript scriptPubKey, int64_t nValue, CWalletTx&
     return CreateTransaction(vecSend, wtxNew, reservekey, nFeeRet, coinControl);
 }
 
-// NovaCoin: get current stake weight
+// Evotion: get current stake weight
 bool CWallet::GetStakeWeight(const CKeyStore& keystore, uint64_t& nMinWeight, uint64_t& nMaxWeight, uint64_t& nWeight)
 {
     // Choose coins to use
@@ -1844,7 +1844,7 @@ string CWallet::SendMoneyToDestination(const CTxDestination& address, int64_t nV
     if (nValue + nTransactionFee > GetBalance())
         return _("Insufficient funds");
 
-    // Parse Bitcoin address
+    // Parse Evotion address
     CScript scriptPubKey;
     scriptPubKey.SetDestination(address);
 
@@ -1887,7 +1887,7 @@ bool CWallet::SetAddressBookName(const CTxDestination& address, const string& st
     NotifyAddressBookChanged(this, address, strName, ::IsMine(*this, address), (mi == mapAddressBook.end()) ? CT_NEW : CT_UPDATED);
     if (!fFileBacked)
         return false;
-    return CWalletDB(strWalletFile).WriteName(CBitcoinAddress(address).ToString(), strName);
+    return CWalletDB(strWalletFile).WriteName(CEvotionAddress(address).ToString(), strName);
 }
 
 bool CWallet::DelAddressBookName(const CTxDestination& address)
@@ -1896,7 +1896,7 @@ bool CWallet::DelAddressBookName(const CTxDestination& address)
     NotifyAddressBookChanged(this, address, "", ::IsMine(*this, address), CT_DELETED);
     if (!fFileBacked)
         return false;
-    return CWalletDB(strWalletFile).EraseName(CBitcoinAddress(address).ToString());
+    return CWalletDB(strWalletFile).EraseName(CEvotionAddress(address).ToString());
 }
 
 

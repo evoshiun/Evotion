@@ -1,9 +1,9 @@
-// Copyright (c) 2009-2010 Satoshi Nakamoto
-// Copyright (c) 2009-2013 The Bitcoin developers
+// Copyright (c) 2015 Evoshi Un
+// Copyright (c) 2009-2013 The Evotion developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
-#ifndef BITCOIN_CORE_H
-#define BITCOIN_CORE_H
+#ifndef EVOTION_CORE_H
+#define EVOTION_CORE_H
 
 #include "uint256.h"
 #include "serialize.h"

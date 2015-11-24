@@ -2,7 +2,7 @@
 #include "ui_rpcconsole.h"
 
 #include "clientmodel.h"
-#include "bitcoinrpc.h"
+#include "evotionrpc.h"
 #include "guiutil.h"
 
 #include <QTime>

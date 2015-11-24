@@ -1,6 +1,6 @@
-// Copyright (c) 2009-2010 Satoshi Nakamoto
-// Copyright (c) 2009-2012 The Bitcoin developers
-// Copyright (c) 2013 The NovaCoin developers
+// Copyright (c) 2015 Evoshi Un
+// Copyright (c) 2015 Evotion
+// Copyright (c) 2013 The Evotion developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -12,7 +12,7 @@ using namespace std;
 
 //////////////////////////////////////////////////////////////////////////////
 //
-// BitcoinMiner
+// EvotionMiner
 //
 
 extern unsigned int nMinerSleep;
@@ -160,7 +160,7 @@ CBlock* CreateNewBlock(CWallet* pwallet, bool fProofOfStake, int64_t* pFees)
     // Fee-per-kilobyte amount considered the same as "free"
     // Be careful setting this: if you set it to zero then
     // a transaction spammer can cheaply fill blocks using
-    // 1-satoshi-fee transactions. It should be set above the real
+    // 1-evoshi-fee transactions. It should be set above the real
     // cost to you of processing a transaction.
     int64_t nMinTxFee = MIN_TX_FEE;
     if (mapArgs.count("-mintxfee"))

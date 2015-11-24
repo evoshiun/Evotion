@@ -1,5 +1,5 @@
-// Copyright (c) 2009-2010 Satoshi Nakamoto
-// Copyright (c) 2009-2012 The Bitcoin developers
+// Copyright (c) 2015 Evoshi Un
+// Copyright (c) 2015 Evotion
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -1366,7 +1366,7 @@ bool CTransaction::ConnectInputs(CTxDB& txdb, MapPrevTx inputs, map<uint256, CTx
 {
     // Take over previous transactions' spent pointers
     // fBlock is true when this is called from AcceptBlock when a new best-block is added to the blockchain
-    // fMiner is true when called from the internal bitcoin miner
+    // fMiner is true when called from the internal evotion miner
     // ... both are false when called from CTransaction::AcceptToMemoryPool
     if (!IsCoinBase())
     {
@@ -2101,7 +2101,7 @@ bool CBlock::CheckBlock(bool fCheckPOW, bool fCheckMerkleRoot, bool fCheckSig) c
         if (!CheckCoinStakeTimestamp(GetBlockTime(), (int64_t)vtx[1].nTime))
             return DoS(50, error("CheckBlock() : coinstake timestamp violation nTimeBlock=%"PRId64" nTimeTx=%u", GetBlockTime(), vtx[1].nTime));
 
-        // NovaCoin: check proof-of-stake block signature
+        // Evotion: check proof-of-stake block signature
         if (fCheckSig && !CheckBlockSignature())
             return DoS(100, error("CheckBlock() : bad proof-of-stake block signature"));
     }

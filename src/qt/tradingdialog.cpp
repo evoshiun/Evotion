@@ -601,7 +601,7 @@ void tradingDialog::ActionsOnSwitch(int index = -1){
                 case 6://show balance tab
                        Response = GetBalance("BTC");
                          if(Response.size() > 0 && Response != "Error"){
-                          DisplayBalance(*ui->BitcoinBalanceLabel,*ui->BitcoinAvailableLabel,*ui->BitcoinPendingLabel, QString::fromUtf8("BTC"),Response);
+                          DisplayBalance(*ui->EvotionBalanceLabel,*ui->EvotionAvailableLabel,*ui->EvotionPendingLabel, QString::fromUtf8("BTC"),Response);
                          }
 
                          Response = GetBalance("EVO");

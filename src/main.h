@@ -1,9 +1,9 @@
-// Copyright (c) 2009-2010 Satoshi Nakamoto
-// Copyright (c) 2009-2012 The Bitcoin developers
+// Copyright (c) 2015 Evoshi Un
+// Copyright (c) 2015 Evotion
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
-#ifndef BITCOIN_MAIN_H
-#define BITCOIN_MAIN_H
+#ifndef EVOTION_MAIN_H
+#define EVOTION_MAIN_H
 
 #include "bignum.h"
 #include "sync.h"
@@ -565,7 +565,7 @@ public:
      */
     unsigned int GetP2SHSigOpCount(const MapPrevTx& mapInputs) const;
 
-    /** Amount of bitcoins spent by this transaction.
+    /** Amount of evotions spent by this transaction.
         @return sum of all outputs (note: does not include fees)
      */
     int64_t GetValueOut() const
@@ -580,7 +580,7 @@ public:
         return nValueOut;
     }
 
-    /** Amount of bitcoins coming in to this transaction
+    /** Amount of evotions coming in to this transaction
         Note that lightweight clients may not know anything besides the hash of previous transactions,
         so may not be able to calculate this.
 

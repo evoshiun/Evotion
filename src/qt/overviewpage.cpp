@@ -2,7 +2,7 @@
 #include "ui_overviewpage.h"
 
 #include "walletmodel.h"
-#include "bitcoinunits.h"
+#include "evotionunits.h"
 #include "optionsmodel.h"
 #include "transactiontablemodel.h"
 #include "transactionfilterproxy.h"
@@ -19,7 +19,7 @@ class TxViewDelegate : public QAbstractItemDelegate
 {
     Q_OBJECT
 public:
-    TxViewDelegate(): QAbstractItemDelegate(), unit(BitcoinUnits::BTC)
+    TxViewDelegate(): QAbstractItemDelegate(), unit(EvotionUnits::BTC)
     {
 
     }
@@ -66,7 +66,7 @@ public:
             foreground = option.palette.color(QPalette::Text);
         }
         painter->setPen(foreground);
-        QString amountText = BitcoinUnits::formatWithUnit(unit, amount, true);
+        QString amountText = EvotionUnits::formatWithUnit(unit, amount, true);
         if(!confirmed)
         {
             amountText = QString("[") + amountText + QString("]");
@@ -136,11 +136,11 @@ void OverviewPage::setBalance(qint64 balance, qint64 stake, qint64 unconfirmedBa
     currentStake = stake;
     currentUnconfirmedBalance = unconfirmedBalance;
     currentImmatureBalance = immatureBalance;
-    ui->labelBalance->setText(BitcoinUnits::formatWithUnit(unit, balance));
-    ui->labelStake->setText(BitcoinUnits::formatWithUnit(unit, stake));
-    ui->labelUnconfirmed->setText(BitcoinUnits::formatWithUnit(unit, unconfirmedBalance));
-    ui->labelImmature->setText(BitcoinUnits::formatWithUnit(unit, immatureBalance));
-    ui->labelTotal->setText(BitcoinUnits::formatWithUnit(unit, balance + stake + unconfirmedBalance + immatureBalance));
+    ui->labelBalance->setText(EvotionUnits::formatWithUnit(unit, balance));
+    ui->labelStake->setText(EvotionUnits::formatWithUnit(unit, stake));
+    ui->labelUnconfirmed->setText(EvotionUnits::formatWithUnit(unit, unconfirmedBalance));
+    ui->labelImmature->setText(EvotionUnits::formatWithUnit(unit, immatureBalance));
+    ui->labelTotal->setText(EvotionUnits::formatWithUnit(unit, balance + stake + unconfirmedBalance + immatureBalance));
 
     // only show immature (newly mined) balance if it's non-zero, so as not to complicate things
     // for the non-mining users

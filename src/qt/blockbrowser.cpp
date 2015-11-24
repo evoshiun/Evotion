@@ -4,7 +4,7 @@
 #include "wallet.h"
 #include "base58.h"
 #include "clientmodel.h"
-#include "bitcoinrpc.h"
+#include "evotionrpc.h"
 #include "transactionrecord.h"
 
 #include <sstream>
@@ -203,7 +203,7 @@ std::string getOutputs(std::string txid)
         const CTxOut& txout = tx.vout[i];
         CTxDestination source;
         ExtractDestination(txout.scriptPubKey, source);
-        CBitcoinAddress addressSource(source);
+        CEvotionAddress addressSource(source);
         std::string lol7 = addressSource.ToString();
         double buffer = convertCoins(txout.nValue);
         std::string amount = boost::to_string(buffer);
@@ -246,7 +246,7 @@ std::string getInputs(std::string txid)
 
         CTxDestination source;
         ExtractDestination(wtxPrev.vout[vin.prevout.n].scriptPubKey, source);
-        CBitcoinAddress addressSource(source);
+        CEvotionAddress addressSource(source);
         std::string lol6 = addressSource.ToString();
         const CScript target = wtxPrev.vout[vin.prevout.n].scriptPubKey;
         double buffer = convertCoins(getInputValue(wtxPrev, target));

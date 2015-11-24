@@ -1,6 +1,6 @@
 TARGET = Evotion-qt
 TEMPLATE = app
-VERSION = 1.0.0.0
+VERSION = 1.1.0.0
 INCLUDEPATH += src src/json src/qt src/zerocoin
 QT += core gui network
 DEFINES += QT_GUI BOOST_THREAD_USE_LIB BOOST_SPIRIT_THREADSAFE

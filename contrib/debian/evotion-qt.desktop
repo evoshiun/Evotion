@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Evotion
+Comment=Evotion P2P Cryptocurrency
+Comment[fr]=Evotion, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=Evotion, eşten eşe kriptografik sanal para birimi
+Exec=/usr/bin/evotion-qt
+Terminal=false
+Type=Application
+Icon=/usr/share/pixmaps/evotion80.xpm
+MimeType=x-scheme-handler/evotion;
+Categories=Office;

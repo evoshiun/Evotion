@@ -1,5 +1,5 @@
 ---
-name: "bitcoin-deps"
+name: "evotion-deps"
 suites:
 - "lucid"
 architectures:

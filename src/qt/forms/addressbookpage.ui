@@ -72,7 +72,7 @@
         <string>&amp;New Address</string>
        </property>
        <property name="icon">
-        <iconset resource="../bitcoin.qrc">
+        <iconset resource="../evotion.qrc">
          <normaloff>:/icons/add</normaloff>:/icons/add</iconset>
        </property>
       </widget>
@@ -86,7 +86,7 @@
         <string>&amp;Copy Address</string>
        </property>
        <property name="icon">
-        <iconset resource="../bitcoin.qrc">
+        <iconset resource="../evotion.qrc">
          <normaloff>:/icons/editcopy</normaloff>:/icons/editcopy</iconset>
        </property>
       </widget>
@@ -97,7 +97,7 @@
         <string>Show &amp;QR Code</string>
        </property>
        <property name="icon">
-        <iconset resource="../bitcoin.qrc">
+        <iconset resource="../evotion.qrc">
          <normaloff>:/icons/qrcode</normaloff>:/icons/qrcode</iconset>
        </property>
       </widget>
@@ -111,7 +111,7 @@
         <string>Sign &amp;Message</string>
        </property>
        <property name="icon">
-        <iconset resource="../bitcoin.qrc">
+        <iconset resource="../evotion.qrc">
          <normaloff>:/icons/edit</normaloff>:/icons/edit</iconset>
        </property>
       </widget>
@@ -125,7 +125,7 @@
         <string>&amp;Verify Message</string>
        </property>
        <property name="icon">
-        <iconset resource="../bitcoin.qrc">
+        <iconset resource="../evotion.qrc">
          <normaloff>:/icons/transaction_0</normaloff>:/icons/transaction_0</iconset>
        </property>
       </widget>
@@ -139,7 +139,7 @@
         <string>&amp;Delete</string>
        </property>
        <property name="icon">
-        <iconset resource="../bitcoin.qrc">
+        <iconset resource="../evotion.qrc">
          <normaloff>:/icons/remove</normaloff>:/icons/remove</iconset>
        </property>
       </widget>
@@ -175,7 +175,7 @@
   </layout>
  </widget>
  <resources>
-  <include location="../bitcoin.qrc"/>
+  <include location="../evotion.qrc"/>
  </resources>
  <connections/>
 </ui>

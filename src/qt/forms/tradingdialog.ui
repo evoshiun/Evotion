@@ -2492,7 +2492,7 @@
     <attribute name="title">
      <string>Balance</string>
     </attribute>
-    <widget class="QLabel" name="BitcoinBalanceLabel">
+    <widget class="QLabel" name="EvotionBalanceLabel">
      <property name="geometry">
       <rect>
        <x>357</x>
@@ -2639,7 +2639,7 @@
       <string>BTC Available</string>
      </property>
     </widget>
-    <widget class="QLabel" name="BitcoinAvailableLabel">
+    <widget class="QLabel" name="EvotionAvailableLabel">
      <property name="geometry">
       <rect>
        <x>357</x>
@@ -2671,7 +2671,7 @@
       <string>BTC Pending</string>
      </property>
     </widget>
-    <widget class="QLabel" name="BitcoinPendingLabel">
+    <widget class="QLabel" name="EvotionPendingLabel">
      <property name="geometry">
       <rect>
        <x>357</x>

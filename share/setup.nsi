@@ -1,4 +1,4 @@
-Name NovaCoin
+Name Evotion
 
 RequestExecutionLevel highest
 SetCompressor /SOLID lzma
@@ -6,7 +6,7 @@ SetCompressor /SOLID lzma
 # General Symbol Definitions
 !define REGKEY "SOFTWARE\$(^Name)"
 !define VERSION 0.3.0
-!define COMPANY "NovaCoin project"
+!define COMPANY "Evotion project"
 !define URL http://www.evotion.ru/
 
 # MUI Symbol Definitions
@@ -19,7 +19,7 @@ SetCompressor /SOLID lzma
 !define MUI_STARTMENUPAGE_REGISTRY_ROOT HKLM
 !define MUI_STARTMENUPAGE_REGISTRY_KEY ${REGKEY}
 !define MUI_STARTMENUPAGE_REGISTRY_VALUENAME StartMenuGroup
-!define MUI_STARTMENUPAGE_DEFAULTFOLDER NovaCoin
+!define MUI_STARTMENUPAGE_DEFAULTFOLDER Evotion
 #!define MUI_FINISHPAGE_RUN $INSTDIR\evotion-qt.exe
 !define MUI_UNICON "${NSISDIR}\Contrib\Graphics\Icons\modern-uninstall.ico"
 !define MUI_UNWELCOMEFINISHPAGE_BITMAP "../share/pixmaps/nsis-wizard.bmp"
@@ -46,13 +46,13 @@ Var StartMenuGroup
 
 # Installer attributes
 OutFile evotion-0.3.0-win32-setup.exe
-InstallDir $PROGRAMFILES\NovaCoin
+InstallDir $PROGRAMFILES\Evotion
 CRCCheck on
 XPStyle on
 BrandingText " "
 ShowInstDetails show
 VIProductVersion 0.3.0.0
-VIAddVersionKey ProductName NovaCoin
+VIAddVersionKey ProductName Evotion
 VIAddVersionKey ProductVersion "${VERSION}"
 VIAddVersionKey CompanyName "${COMPANY}"
 VIAddVersionKey CompanyWebsite "${URL}"
@@ -76,7 +76,7 @@ Section -Main SEC0000
     SetOutPath $INSTDIR
     WriteRegStr HKCU "${REGKEY}\Components" Main 1
 
-    # Remove old wxwidgets-based-bitcoin executable and locales:
+    # Remove old wxwidgets-based-evotion executable and locales:
     #Delete /REBOOTOK $INSTDIR\evotion.exe
     #RMDir /r /REBOOTOK $INSTDIR\locale
 SectionEnd
@@ -87,7 +87,7 @@ Section -post SEC0001
     WriteUninstaller $INSTDIR\uninstall.exe
     !insertmacro MUI_STARTMENU_WRITE_BEGIN Application
     CreateDirectory $SMPROGRAMS\$StartMenuGroup
-    CreateShortcut "$SMPROGRAMS\$StartMenuGroup\Uninstall NovaCoin.lnk" $INSTDIR\uninstall.exe
+    CreateShortcut "$SMPROGRAMS\$StartMenuGroup\Uninstall Evotion.lnk" $INSTDIR\uninstall.exe
     !insertmacro MUI_STARTMENU_WRITE_END
     WriteRegStr HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)" DisplayName "$(^Name)"
     WriteRegStr HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)" DisplayVersion "${VERSION}"
@@ -98,11 +98,11 @@ Section -post SEC0001
     WriteRegDWORD HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)" NoModify 1
     WriteRegDWORD HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)" NoRepair 1
 
-    # bitcoin: URI handling disabled for 0.6.0
-    #    WriteRegStr HKCR "bitcoin" "URL Protocol" ""
-    #    WriteRegStr HKCR "bitcoin" "" "URL:Bitcoin"
-    #    WriteRegStr HKCR "bitcoin\DefaultIcon" "" $INSTDIR\bitcoin-qt.exe
-    #    WriteRegStr HKCR "bitcoin\shell\open\command" "" '"$INSTDIR\bitcoin-qt.exe" "$$1"'
+    # evotion: URI handling disabled for 0.6.0
+    #    WriteRegStr HKCR "evotion" "URL Protocol" ""
+    #    WriteRegStr HKCR "evotion" "" "URL:Evotion"
+    #    WriteRegStr HKCR "evotion\DefaultIcon" "" $INSTDIR\evotion-qt.exe
+    #    WriteRegStr HKCR "evotion\shell\open\command" "" '"$INSTDIR\evotion-qt.exe" "$$1"'
 SectionEnd
 
 # Macro for selecting uninstaller sections
@@ -130,9 +130,9 @@ SectionEnd
 
 Section -un.post UNSEC0001
     DeleteRegKey HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)"
-    Delete /REBOOTOK "$SMPROGRAMS\$StartMenuGroup\Uninstall NovaCoin.lnk"
-    #Delete /REBOOTOK "$SMPROGRAMS\$StartMenuGroup\Bitcoin.lnk"
-    #Delete /REBOOTOK "$SMSTARTUP\Bitcoin.lnk"
+    Delete /REBOOTOK "$SMPROGRAMS\$StartMenuGroup\Uninstall Evotion.lnk"
+    #Delete /REBOOTOK "$SMPROGRAMS\$StartMenuGroup\Evotion.lnk"
+    #Delete /REBOOTOK "$SMSTARTUP\Evotion.lnk"
     Delete /REBOOTOK $INSTDIR\uninstall.exe
     Delete /REBOOTOK $INSTDIR\debug.log
     Delete /REBOOTOK $INSTDIR\db.log

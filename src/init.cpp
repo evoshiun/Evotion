@@ -1,10 +1,10 @@
-// Copyright (c) 2009-2010 Satoshi Nakamoto
-// Copyright (c) 2009-2012 The Bitcoin developers
+// Copyright (c) 2015 Evoshi Un
+// Copyright (c) 2015 Evotion
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 #include "txdb.h"
 #include "walletdb.h"
-#include "bitcoinrpc.h"
+#include "evotionrpc.h"
 #include "net.h"
 #include "init.h"
 #include "util.h"
@@ -52,7 +52,7 @@ void ExitTimeout(void* parg)
 void StartShutdown()
 {
 #ifdef QT_GUI
-    // ensure we leave the Qt main loop for a clean GUI exit (Shutdown() is called in bitcoin.cpp afterwards)
+    // ensure we leave the Qt main loop for a clean GUI exit (Shutdown() is called in evotion.cpp afterwards)
     uiInterface.QueueShutdown();
 #else
     // Without UI, Shutdown() can simply be started in a new thread
@@ -94,7 +94,7 @@ void Shutdown(void* parg)
         printf("Evotion exited\n\n");
         fExit = true;
 #ifndef QT_GUI
-        // ensure non-UI client gets exited here, but let Bitcoin-Qt reach 'return 0;' in bitcoin.cpp
+        // ensure non-UI client gets exited here, but let Evotion-Qt reach 'return 0;' in evotion.cpp
         exit(0);
 #endif
     }
@@ -134,7 +134,7 @@ bool AppInit(int argc, char* argv[])
         //
         // Parameters
         //
-        // If Qt is used, parameters/bitcoin.conf are parsed in qt/bitcoin.cpp's main()
+        // If Qt is used, parameters/evotion.conf are parsed in qt/evotion.cpp's main()
         ParseParameters(argc, argv);
         if (!boost::filesystem::is_directory(GetDataDir(false)))
         {
@@ -145,7 +145,7 @@ bool AppInit(int argc, char* argv[])
 
         if (mapArgs.count("-?") || mapArgs.count("--help"))
         {
-            // First part of help message is specific to bitcoind / RPC client
+            // First part of help message is specific to evotiond / RPC client
             std::string strUsage = _("Evotion version") + " " + FormatFullVersion() + "\n\n" +
                 _("Usage:") + "\n" +
                   "  Evotiond [options]                     " + "\n" +
@@ -187,7 +187,7 @@ int main(int argc, char* argv[])
 {
     bool fRet = false;
 
-    // Connect bitcoind signal handlers
+    // Connect evotiond signal handlers
     noui_connect();
 
     fRet = AppInit(argc, argv);
@@ -307,7 +307,7 @@ std::string HelpMessage()
         "  -blockmaxsize=<n>      "   + _("Set maximum block size in bytes (default: 250000)") + "\n" +
         "  -blockprioritysize=<n> "   + _("Set maximum size of high-priority/low-fee transactions in bytes (default: 27000)") + "\n" +
 
-        "\n" + _("SSL options: (see the Bitcoin Wiki for SSL setup instructions)") + "\n" +
+        "\n" + _("SSL options: (see the Evotion Wiki for SSL setup instructions)") + "\n" +
         "  -rpcssl                                  " + _("Use OpenSSL (https) for JSON-RPC connections") + "\n" +
         "  -rpcsslcertificatechainfile=<file.cert>  " + _("Server certificate file (default: server.cert)") + "\n" +
         "  -rpcsslprivatekeyfile=<file.pem>         " + _("Server private key (default: server.pem)") + "\n" +
@@ -316,7 +316,7 @@ std::string HelpMessage()
     return strUsage;
 }
 
-/** Initialize bitcoin.
+/** Initialize evotion.
  *  @pre Parameters should be parsed and config file should be read.
  */
 bool AppInit2()
@@ -485,7 +485,7 @@ bool AppInit2()
     if (strWalletFileName != boost::filesystem::basename(strWalletFileName) + boost::filesystem::extension(strWalletFileName))
         return InitError(strprintf(_("Wallet %s resides outside data directory %s."), strWalletFileName.c_str(), strDataDir.c_str()));
 
-    // Make sure only a single Bitcoin process is using the data directory.
+    // Make sure only a single Evotion process is using the data directory.
     boost::filesystem::path pathLockFile = GetDataDir() / ".lock";
     FILE* file = fopen(pathLockFile.string().c_str(), "a"); // empty lock file; created if it doesn't exist.
     if (file) fclose(file);
@@ -702,7 +702,7 @@ bool AppInit2()
 
 
     // as LoadBlockIndex can take several minutes, it's possible the user
-    // requested to kill bitcoin-qt during the last operation. If so, exit.
+    // requested to kill evotion-qt during the last operation. If so, exit.
     // As the program has not fully started yet, Shutdown() is possibly overkill.
     if (fRequestShutdown)
     {

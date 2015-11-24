@@ -44,8 +44,8 @@ OBJECTS_DIR   = build/
 ####### Files
 
 SOURCES       = src/txdb-leveldb.cpp \
-		src/qt/bitcoin.cpp \
-		src/qt/bitcoingui.cpp \
+		src/qt/evotion.cpp \
+		src/qt/evotiongui.cpp \
 		src/qt/transactiontablemodel.cpp \
 		src/qt/addresstablemodel.cpp \
 		src/qt/optionsdialog.cpp \
@@ -56,7 +56,7 @@ SOURCES       = src/txdb-leveldb.cpp \
 		src/qt/signverifymessagedialog.cpp \
 		src/qt/aboutdialog.cpp \
 		src/qt/editaddressdialog.cpp \
-		src/qt/bitcoinaddressvalidator.cpp \
+		src/qt/evotionaddressvalidator.cpp \
 		src/alert.cpp \
 		src/version.cpp \
 		src/sync.cpp \
@@ -80,14 +80,14 @@ SOURCES       = src/txdb-leveldb.cpp \
 		src/qt/monitoreddatamapper.cpp \
 		src/qt/transactiondesc.cpp \
 		src/qt/transactiondescdialog.cpp \
-		src/qt/bitcoinstrings.cpp \
-		src/qt/bitcoinamountfield.cpp \
+		src/qt/evotionstrings.cpp \
+		src/qt/evotionamountfield.cpp \
 		src/wallet.cpp \
 		src/keystore.cpp \
 		src/qt/transactionfilterproxy.cpp \
 		src/qt/transactionview.cpp \
 		src/qt/walletmodel.cpp \
-		src/bitcoinrpc.cpp \
+		src/evotionrpc.cpp \
 		src/rpcdump.cpp \
 		src/rpcnet.cpp \
 		src/rpcmining.cpp \
@@ -99,7 +99,7 @@ SOURCES       = src/txdb-leveldb.cpp \
 		src/crypter.cpp \
 		src/qt/sendcoinsentry.cpp \
 		src/qt/qvalidatedlineedit.cpp \
-		src/qt/bitcoinunits.cpp \
+		src/qt/evotionunits.cpp \
 		src/qt/qvaluecombobox.cpp \
 		src/qt/askpassphrasedialog.cpp \
 		src/protocol.cpp \
@@ -122,7 +122,7 @@ SOURCES       = src/txdb-leveldb.cpp \
 		src/zerocoin/Params.cpp \
 		src/zerocoin/SerialNumberSignatureOfKnowledge.cpp \
 		src/zerocoin/SpendMetaData.cpp \
-		src/zerocoin/ZeroTest.cpp build/moc_bitcoingui.cpp \
+		src/zerocoin/ZeroTest.cpp build/moc_evotiongui.cpp \
 		build/moc_transactiontablemodel.cpp \
 		build/moc_addresstablemodel.cpp \
 		build/moc_optionsdialog.cpp \
@@ -133,14 +133,14 @@ SOURCES       = src/txdb-leveldb.cpp \
 		build/moc_signverifymessagedialog.cpp \
 		build/moc_aboutdialog.cpp \
 		build/moc_editaddressdialog.cpp \
-		build/moc_bitcoinaddressvalidator.cpp \
+		build/moc_evotionaddressvalidator.cpp \
 		build/moc_clientmodel.cpp \
 		build/moc_guiutil.cpp \
 		build/moc_optionsmodel.cpp \
 		build/moc_monitoreddatamapper.cpp \
 		build/moc_transactiondesc.cpp \
 		build/moc_transactiondescdialog.cpp \
-		build/moc_bitcoinamountfield.cpp \
+		build/moc_evotionamountfield.cpp \
 		build/moc_transactionfilterproxy.cpp \
 		build/moc_transactionview.cpp \
 		build/moc_walletmodel.cpp \
@@ -152,10 +152,10 @@ SOURCES       = src/txdb-leveldb.cpp \
 		build/moc_askpassphrasedialog.cpp \
 		build/moc_notificator.cpp \
 		build/moc_rpcconsole.cpp \
-		qrc_bitcoin.cpp
+		qrc_evotion.cpp
 OBJECTS       = build/txdb-leveldb.o \
-		build/bitcoin.o \
-		build/bitcoingui.o \
+		build/evotion.o \
+		build/evotiongui.o \
 		build/transactiontablemodel.o \
 		build/addresstablemodel.o \
 		build/optionsdialog.o \
@@ -166,7 +166,7 @@ OBJECTS       = build/txdb-leveldb.o \
 		build/signverifymessagedialog.o \
 		build/aboutdialog.o \
 		build/editaddressdialog.o \
-		build/bitcoinaddressvalidator.o \
+		build/evotionaddressvalidator.o \
 		build/alert.o \
 		build/version.o \
 		build/sync.o \
@@ -190,14 +190,14 @@ OBJECTS       = build/txdb-leveldb.o \
 		build/monitoreddatamapper.o \
 		build/transactiondesc.o \
 		build/transactiondescdialog.o \
-		build/bitcoinstrings.o \
-		build/bitcoinamountfield.o \
+		build/evotionstrings.o \
+		build/evotionamountfield.o \
 		build/wallet.o \
 		build/keystore.o \
 		build/transactionfilterproxy.o \
 		build/transactionview.o \
 		build/walletmodel.o \
-		build/bitcoinrpc.o \
+		build/evotionrpc.o \
 		build/rpcdump.o \
 		build/rpcnet.o \
 		build/rpcmining.o \
@@ -209,7 +209,7 @@ OBJECTS       = build/txdb-leveldb.o \
 		build/crypter.o \
 		build/sendcoinsentry.o \
 		build/qvalidatedlineedit.o \
-		build/bitcoinunits.o \
+		build/evotionunits.o \
 		build/qvaluecombobox.o \
 		build/askpassphrasedialog.o \
 		build/protocol.o \
@@ -233,7 +233,7 @@ OBJECTS       = build/txdb-leveldb.o \
 		build/SerialNumberSignatureOfKnowledge.o \
 		build/SpendMetaData.o \
 		build/ZeroTest.o \
-		build/moc_bitcoingui.o \
+		build/moc_evotiongui.o \
 		build/moc_transactiontablemodel.o \
 		build/moc_addresstablemodel.o \
 		build/moc_optionsdialog.o \
@@ -244,14 +244,14 @@ OBJECTS       = build/txdb-leveldb.o \
 		build/moc_signverifymessagedialog.o \
 		build/moc_aboutdialog.o \
 		build/moc_editaddressdialog.o \
-		build/moc_bitcoinaddressvalidator.o \
+		build/moc_evotionaddressvalidator.o \
 		build/moc_clientmodel.o \
 		build/moc_guiutil.o \
 		build/moc_optionsmodel.o \
 		build/moc_monitoreddatamapper.o \
 		build/moc_transactiondesc.o \
 		build/moc_transactiondescdialog.o \
-		build/moc_bitcoinamountfield.o \
+		build/moc_evotionamountfield.o \
 		build/moc_transactionfilterproxy.o \
 		build/moc_transactionview.o \
 		build/moc_walletmodel.o \
@@ -263,7 +263,7 @@ OBJECTS       = build/txdb-leveldb.o \
 		build/moc_askpassphrasedialog.o \
 		build/moc_notificator.o \
 		build/moc_rpcconsole.o \
-		build/qrc_bitcoin.o
+		build/qrc_evotion.o
 DIST          = /usr/share/qt4/mkspecs/common/unix.conf \
 		/usr/share/qt4/mkspecs/common/linux.conf \
 		/usr/share/qt4/mkspecs/common/gcc-base.conf \
@@ -375,7 +375,7 @@ qmake:  FORCE
 
 dist: 
 	@$(CHK_DIR_EXISTS) build/Evotion-qt1.0.7 || $(MKDIR) build/Evotion-qt1.0.7 
-	$(COPY_FILE) --parents $(SOURCES) $(DIST) build/Evotion-qt1.0.7/ && $(COPY_FILE) --parents src/qt/locale/bitcoin_af_ZA.ts src/qt/locale/bitcoin_ar.ts src/qt/locale/bitcoin_be_BY.ts src/qt/locale/bitcoin_bg.ts src/qt/locale/bitcoin_bs.ts src/qt/locale/bitcoin_ca.ts src/qt/locale/bitcoin_ca@valencia.ts src/qt/locale/bitcoin_ca_ES.ts src/qt/locale/bitcoin_cs.ts src/qt/locale/bitcoin_cy.ts src/qt/locale/bitcoin_da.ts src/qt/locale/bitcoin_de.ts src/qt/locale/bitcoin_el_GR.ts src/qt/locale/bitcoin_en.ts src/qt/locale/bitcoin_eo.ts src/qt/locale/bitcoin_es.ts src/qt/locale/bitcoin_es_CL.ts src/qt/locale/bitcoin_es_DO.ts src/qt/locale/bitcoin_es_MX.ts src/qt/locale/bitcoin_es_UY.ts src/qt/locale/bitcoin_et.ts src/qt/locale/bitcoin_eu_ES.ts src/qt/locale/bitcoin_fa.ts src/qt/locale/bitcoin_fa_IR.ts src/qt/locale/bitcoin_fi.ts src/qt/locale/bitcoin_fr.ts src/qt/locale/bitcoin_fr_CA.ts src/qt/locale/bitcoin_gl.ts src/qt/locale/bitcoin_he.ts src/qt/locale/bitcoin_hi_IN.ts src/qt/locale/bitcoin_hr.ts src/qt/locale/bitcoin_hu.ts src/qt/locale/bitcoin_id_ID.ts src/qt/locale/bitcoin_it.ts src/qt/locale/bitcoin_ja.ts src/qt/locale/bitcoin_ka.ts src/qt/locale/bitcoin_kk_KZ.ts src/qt/locale/bitcoin_ko_KR.ts src/qt/locale/bitcoin_ky.ts src/qt/locale/bitcoin_la.ts src/qt/locale/bitcoin_lt.ts src/qt/locale/bitcoin_lv_LV.ts src/qt/locale/bitcoin_ms_MY.ts src/qt/locale/bitcoin_nb.ts src/qt/locale/bitcoin_nl.ts src/qt/locale/bitcoin_pam.ts src/qt/locale/bitcoin_pl.ts src/qt/locale/bitcoin_pt_BR.ts src/qt/locale/bitcoin_pt_PT.ts src/qt/locale/bitcoin_ro_RO.ts src/qt/locale/bitcoin_ru.ts src/qt/locale/bitcoin_sah.ts src/qt/locale/bitcoin_sk.ts src/qt/locale/bitcoin_sl_SI.ts src/qt/locale/bitcoin_sq.ts src/qt/locale/bitcoin_sr.ts src/qt/locale/bitcoin_sv.ts src/qt/locale/bitcoin_th_TH.ts src/qt/locale/bitcoin_tr.ts src/qt/locale/bitcoin_uk.ts src/qt/locale/bitcoin_ur_PK.ts src/qt/locale/bitcoin_vi.ts src/qt/locale/bitcoin_vi_VN.ts src/qt/locale/bitcoin_zh_CN.ts src/qt/locale/bitcoin_zh_TW.ts build/Evotion-qt1.0.7/ && $(COPY_FILE) --parents src/qt/bitcoingui.h src/qt/transactiontablemodel.h src/qt/addresstablemodel.h src/qt/optionsdialog.h src/qt/coincontroldialog.h src/qt/coincontroltreewidget.h src/qt/sendcoinsdialog.h src/qt/addressbookpage.h src/qt/signverifymessagedialog.h src/qt/aboutdialog.h src/qt/editaddressdialog.h src/qt/bitcoinaddressvalidator.h src/alert.h src/addrman.h src/base58.h src/bignum.h src/checkpoints.h src/compat.h src/coincontrol.h src/sync.h src/util.h src/uint256.h src/kernel.h src/scrypt.h src/pbkdf2.h src/zerocoin/Accumulator.h src/zerocoin/AccumulatorProofOfKnowledge.h src/zerocoin/Coin.h src/zerocoin/CoinSpend.h src/zerocoin/Commitment.h src/zerocoin/ParamGeneration.h src/zerocoin/Params.h src/zerocoin/SerialNumberSignatureOfKnowledge.h src/zerocoin/SpendMetaData.h src/zerocoin/ZeroTest.h src/zerocoin/Zerocoin.h src/serialize.h src/strlcpy.h src/main.h src/miner.h src/net.h src/key.h src/db.h src/txdb.h src/walletdb.h src/script.h src/init.h src/irc.h src/mruset.h src/json/json_spirit_writer_template.h src/json/json_spirit_writer.h src/json/json_spirit_value.h src/json/json_spirit_utils.h src/json/json_spirit_stream_reader.h src/json/json_spirit_reader_template.h src/json/json_spirit_reader.h src/json/json_spirit_error_position.h src/json/json_spirit.h src/qt/clientmodel.h src/qt/guiutil.h src/qt/transactionrecord.h src/qt/guiconstants.h src/qt/optionsmodel.h src/qt/monitoreddatamapper.h src/qt/transactiondesc.h src/qt/transactiondescdialog.h src/qt/bitcoinamountfield.h src/wallet.h src/keystore.h src/qt/transactionfilterproxy.h src/qt/transactionview.h src/qt/walletmodel.h src/bitcoinrpc.h src/qt/overviewpage.h src/qt/csvmodelwriter.h src/crypter.h src/qt/sendcoinsentry.h src/qt/qvalidatedlineedit.h src/qt/bitcoinunits.h src/qt/qvaluecombobox.h src/qt/askpassphrasedialog.h src/protocol.h src/qt/notificator.h src/qt/qtipcserver.h src/allocators.h src/ui_interface.h src/qt/rpcconsole.h src/version.h src/netbase.h src/clientversion.h build/Evotion-qt1.0.7/ && $(COPY_FILE) --parents src/qt/bitcoin.qrc build/Evotion-qt1.0.7/ && $(COPY_FILE) --parents src/txdb-leveldb.cpp src/qt/bitcoin.cpp src/qt/bitcoingui.cpp src/qt/transactiontablemodel.cpp src/qt/addresstablemodel.cpp src/qt/optionsdialog.cpp src/qt/sendcoinsdialog.cpp src/qt/coincontroldialog.cpp src/qt/coincontroltreewidget.cpp src/qt/addressbookpage.cpp src/qt/signverifymessagedialog.cpp src/qt/aboutdialog.cpp src/qt/editaddressdialog.cpp src/qt/bitcoinaddressvalidator.cpp src/alert.cpp src/version.cpp src/sync.cpp src/util.cpp src/netbase.cpp src/key.cpp src/script.cpp src/main.cpp src/miner.cpp src/init.cpp src/net.cpp src/irc.cpp src/checkpoints.cpp src/addrman.cpp src/db.cpp src/walletdb.cpp src/qt/clientmodel.cpp src/qt/guiutil.cpp src/qt/transactionrecord.cpp src/qt/optionsmodel.cpp src/qt/monitoreddatamapper.cpp src/qt/transactiondesc.cpp src/qt/transactiondescdialog.cpp src/qt/bitcoinstrings.cpp src/qt/bitcoinamountfield.cpp src/wallet.cpp src/keystore.cpp src/qt/transactionfilterproxy.cpp src/qt/transactionview.cpp src/qt/walletmodel.cpp src/bitcoinrpc.cpp src/rpcdump.cpp src/rpcnet.cpp src/rpcmining.cpp src/rpcwallet.cpp src/rpcblockchain.cpp src/rpcrawtransaction.cpp src/qt/overviewpage.cpp src/qt/csvmodelwriter.cpp src/crypter.cpp src/qt/sendcoinsentry.cpp src/qt/qvalidatedlineedit.cpp src/qt/bitcoinunits.cpp src/qt/qvaluecombobox.cpp src/qt/askpassphrasedialog.cpp src/protocol.cpp src/qt/notificator.cpp src/qt/qtipcserver.cpp src/qt/rpcconsole.cpp src/noui.cpp src/kernel.cpp src/scrypt-arm.S src/scrypt-x86.S src/scrypt-x86_64.S src/scrypt.cpp src/pbkdf2.cpp src/zerocoin/Accumulator.cpp src/zerocoin/AccumulatorProofOfKnowledge.cpp src/zerocoin/Coin.cpp src/zerocoin/CoinSpend.cpp src/zerocoin/Commitment.cpp src/zerocoin/ParamGeneration.cpp src/zerocoin/Params.cpp src/zerocoin/SerialNumberSignatureOfKnowledge.cpp src/zerocoin/SpendMetaData.cpp src/zerocoin/ZeroTest.cpp build/Evotion-qt1.0.7/ && $(COPY_FILE) --parents src/qt/forms/coincontroldialog.ui src/qt/forms/sendcoinsdialog.ui src/qt/forms/addressbookpage.ui src/qt/forms/signverifymessagedialog.ui src/qt/forms/aboutdialog.ui src/qt/forms/editaddressdialog.ui src/qt/forms/transactiondescdialog.ui src/qt/forms/overviewpage.ui src/qt/forms/sendcoinsentry.ui src/qt/forms/askpassphrasedialog.ui src/qt/forms/rpcconsole.ui src/qt/forms/optionsdialog.ui build/Evotion-qt1.0.7/ && $(COPY_FILE) --parents src/qt/locale/bitcoin_af_ZA.ts src/qt/locale/bitcoin_ar.ts src/qt/locale/bitcoin_be_BY.ts src/qt/locale/bitcoin_bg.ts src/qt/locale/bitcoin_bs.ts src/qt/locale/bitcoin_ca.ts src/qt/locale/bitcoin_ca@valencia.ts src/qt/locale/bitcoin_ca_ES.ts src/qt/locale/bitcoin_cs.ts src/qt/locale/bitcoin_cy.ts src/qt/locale/bitcoin_da.ts src/qt/locale/bitcoin_de.ts src/qt/locale/bitcoin_el_GR.ts src/qt/locale/bitcoin_en.ts src/qt/locale/bitcoin_eo.ts src/qt/locale/bitcoin_es.ts src/qt/locale/bitcoin_es_CL.ts src/qt/locale/bitcoin_es_DO.ts src/qt/locale/bitcoin_es_MX.ts src/qt/locale/bitcoin_es_UY.ts src/qt/locale/bitcoin_et.ts src/qt/locale/bitcoin_eu_ES.ts src/qt/locale/bitcoin_fa.ts src/qt/locale/bitcoin_fa_IR.ts src/qt/locale/bitcoin_fi.ts src/qt/locale/bitcoin_fr.ts src/qt/locale/bitcoin_fr_CA.ts src/qt/locale/bitcoin_gl.ts src/qt/locale/bitcoin_he.ts src/qt/locale/bitcoin_hi_IN.ts src/qt/locale/bitcoin_hr.ts src/qt/locale/bitcoin_hu.ts src/qt/locale/bitcoin_id_ID.ts src/qt/locale/bitcoin_it.ts src/qt/locale/bitcoin_ja.ts src/qt/locale/bitcoin_ka.ts src/qt/locale/bitcoin_kk_KZ.ts src/qt/locale/bitcoin_ko_KR.ts src/qt/locale/bitcoin_ky.ts src/qt/locale/bitcoin_la.ts src/qt/locale/bitcoin_lt.ts src/qt/locale/bitcoin_lv_LV.ts src/qt/locale/bitcoin_ms_MY.ts src/qt/locale/bitcoin_nb.ts src/qt/locale/bitcoin_nl.ts src/qt/locale/bitcoin_pam.ts src/qt/locale/bitcoin_pl.ts src/qt/locale/bitcoin_pt_BR.ts src/qt/locale/bitcoin_pt_PT.ts src/qt/locale/bitcoin_ro_RO.ts src/qt/locale/bitcoin_ru.ts src/qt/locale/bitcoin_sah.ts src/qt/locale/bitcoin_sk.ts src/qt/locale/bitcoin_sl_SI.ts src/qt/locale/bitcoin_sq.ts src/qt/locale/bitcoin_sr.ts src/qt/locale/bitcoin_sv.ts src/qt/locale/bitcoin_th_TH.ts src/qt/locale/bitcoin_tr.ts src/qt/locale/bitcoin_uk.ts src/qt/locale/bitcoin_ur_PK.ts src/qt/locale/bitcoin_vi.ts src/qt/locale/bitcoin_vi_VN.ts src/qt/locale/bitcoin_zh_CN.ts src/qt/locale/bitcoin_zh_TW.ts build/Evotion-qt1.0.7/ && (cd `dirname build/Evotion-qt1.0.7` && $(TAR) Evotion-qt1.0.7.tar Evotion-qt1.0.7 && $(COMPRESS) Evotion-qt1.0.7.tar) && $(MOVE) `dirname build/Evotion-qt1.0.7`/Evotion-qt1.0.7.tar.gz . && $(DEL_FILE) -r build/Evotion-qt1.0.7
+	$(COPY_FILE) --parents $(SOURCES) $(DIST) build/Evotion-qt1.0.7/ && $(COPY_FILE) --parents src/qt/locale/evotion_af_ZA.ts src/qt/locale/evotion_ar.ts src/qt/locale/evotion_be_BY.ts src/qt/locale/evotion_bg.ts src/qt/locale/evotion_bs.ts src/qt/locale/evotion_ca.ts src/qt/locale/evotion_ca@valencia.ts src/qt/locale/evotion_ca_ES.ts src/qt/locale/evotion_cs.ts src/qt/locale/evotion_cy.ts src/qt/locale/evotion_da.ts src/qt/locale/evotion_de.ts src/qt/locale/evotion_el_GR.ts src/qt/locale/evotion_en.ts src/qt/locale/evotion_eo.ts src/qt/locale/evotion_es.ts src/qt/locale/evotion_es_CL.ts src/qt/locale/evotion_es_DO.ts src/qt/locale/evotion_es_MX.ts src/qt/locale/evotion_es_UY.ts src/qt/locale/evotion_et.ts src/qt/locale/evotion_eu_ES.ts src/qt/locale/evotion_fa.ts src/qt/locale/evotion_fa_IR.ts src/qt/locale/evotion_fi.ts src/qt/locale/evotion_fr.ts src/qt/locale/evotion_fr_CA.ts src/qt/locale/evotion_gl.ts src/qt/locale/evotion_he.ts src/qt/locale/evotion_hi_IN.ts src/qt/locale/evotion_hr.ts src/qt/locale/evotion_hu.ts src/qt/locale/evotion_id_ID.ts src/qt/locale/evotion_it.ts src/qt/locale/evotion_ja.ts src/qt/locale/evotion_ka.ts src/qt/locale/evotion_kk_KZ.ts src/qt/locale/evotion_ko_KR.ts src/qt/locale/evotion_ky.ts src/qt/locale/evotion_la.ts src/qt/locale/evotion_lt.ts src/qt/locale/evotion_lv_LV.ts src/qt/locale/evotion_ms_MY.ts src/qt/locale/evotion_nb.ts src/qt/locale/evotion_nl.ts src/qt/locale/evotion_pam.ts src/qt/locale/evotion_pl.ts src/qt/locale/evotion_pt_BR.ts src/qt/locale/evotion_pt_PT.ts src/qt/locale/evotion_ro_RO.ts src/qt/locale/evotion_ru.ts src/qt/locale/evotion_sah.ts src/qt/locale/evotion_sk.ts src/qt/locale/evotion_sl_SI.ts src/qt/locale/evotion_sq.ts src/qt/locale/evotion_sr.ts src/qt/locale/evotion_sv.ts src/qt/locale/evotion_th_TH.ts src/qt/locale/evotion_tr.ts src/qt/locale/evotion_uk.ts src/qt/locale/evotion_ur_PK.ts src/qt/locale/evotion_vi.ts src/qt/locale/evotion_vi_VN.ts src/qt/locale/evotion_zh_CN.ts src/qt/locale/evotion_zh_TW.ts build/Evotion-qt1.0.7/ && $(COPY_FILE) --parents src/qt/evotiongui.h src/qt/transactiontablemodel.h src/qt/addresstablemodel.h src/qt/optionsdialog.h src/qt/coincontroldialog.h src/qt/coincontroltreewidget.h src/qt/sendcoinsdialog.h src/qt/addressbookpage.h src/qt/signverifymessagedialog.h src/qt/aboutdialog.h src/qt/editaddressdialog.h src/qt/evotionaddressvalidator.h src/alert.h src/addrman.h src/base58.h src/bignum.h src/checkpoints.h src/compat.h src/coincontrol.h src/sync.h src/util.h src/uint256.h src/kernel.h src/scrypt.h src/pbkdf2.h src/zerocoin/Accumulator.h src/zerocoin/AccumulatorProofOfKnowledge.h src/zerocoin/Coin.h src/zerocoin/CoinSpend.h src/zerocoin/Commitment.h src/zerocoin/ParamGeneration.h src/zerocoin/Params.h src/zerocoin/SerialNumberSignatureOfKnowledge.h src/zerocoin/SpendMetaData.h src/zerocoin/ZeroTest.h src/zerocoin/Zerocoin.h src/serialize.h src/strlcpy.h src/main.h src/miner.h src/net.h src/key.h src/db.h src/txdb.h src/walletdb.h src/script.h src/init.h src/irc.h src/mruset.h src/json/json_spirit_writer_template.h src/json/json_spirit_writer.h src/json/json_spirit_value.h src/json/json_spirit_utils.h src/json/json_spirit_stream_reader.h src/json/json_spirit_reader_template.h src/json/json_spirit_reader.h src/json/json_spirit_error_position.h src/json/json_spirit.h src/qt/clientmodel.h src/qt/guiutil.h src/qt/transactionrecord.h src/qt/guiconstants.h src/qt/optionsmodel.h src/qt/monitoreddatamapper.h src/qt/transactiondesc.h src/qt/transactiondescdialog.h src/qt/evotionamountfield.h src/wallet.h src/keystore.h src/qt/transactionfilterproxy.h src/qt/transactionview.h src/qt/walletmodel.h src/evotionrpc.h src/qt/overviewpage.h src/qt/csvmodelwriter.h src/crypter.h src/qt/sendcoinsentry.h src/qt/qvalidatedlineedit.h src/qt/evotionunits.h src/qt/qvaluecombobox.h src/qt/askpassphrasedialog.h src/protocol.h src/qt/notificator.h src/qt/qtipcserver.h src/allocators.h src/ui_interface.h src/qt/rpcconsole.h src/version.h src/netbase.h src/clientversion.h build/Evotion-qt1.0.7/ && $(COPY_FILE) --parents src/qt/evotion.qrc build/Evotion-qt1.0.7/ && $(COPY_FILE) --parents src/txdb-leveldb.cpp src/qt/evotion.cpp src/qt/evotiongui.cpp src/qt/transactiontablemodel.cpp src/qt/addresstablemodel.cpp src/qt/optionsdialog.cpp src/qt/sendcoinsdialog.cpp src/qt/coincontroldialog.cpp src/qt/coincontroltreewidget.cpp src/qt/addressbookpage.cpp src/qt/signverifymessagedialog.cpp src/qt/aboutdialog.cpp src/qt/editaddressdialog.cpp src/qt/evotionaddressvalidator.cpp src/alert.cpp src/version.cpp src/sync.cpp src/util.cpp src/netbase.cpp src/key.cpp src/script.cpp src/main.cpp src/miner.cpp src/init.cpp src/net.cpp src/irc.cpp src/checkpoints.cpp src/addrman.cpp src/db.cpp src/walletdb.cpp src/qt/clientmodel.cpp src/qt/guiutil.cpp src/qt/transactionrecord.cpp src/qt/optionsmodel.cpp src/qt/monitoreddatamapper.cpp src/qt/transactiondesc.cpp src/qt/transactiondescdialog.cpp src/qt/evotionstrings.cpp src/qt/evotionamountfield.cpp src/wallet.cpp src/keystore.cpp src/qt/transactionfilterproxy.cpp src/qt/transactionview.cpp src/qt/walletmodel.cpp src/evotionrpc.cpp src/rpcdump.cpp src/rpcnet.cpp src/rpcmining.cpp src/rpcwallet.cpp src/rpcblockchain.cpp src/rpcrawtransaction.cpp src/qt/overviewpage.cpp src/qt/csvmodelwriter.cpp src/crypter.cpp src/qt/sendcoinsentry.cpp src/qt/qvalidatedlineedit.cpp src/qt/evotionunits.cpp src/qt/qvaluecombobox.cpp src/qt/askpassphrasedialog.cpp src/protocol.cpp src/qt/notificator.cpp src/qt/qtipcserver.cpp src/qt/rpcconsole.cpp src/noui.cpp src/kernel.cpp src/scrypt-arm.S src/scrypt-x86.S src/scrypt-x86_64.S src/scrypt.cpp src/pbkdf2.cpp src/zerocoin/Accumulator.cpp src/zerocoin/AccumulatorProofOfKnowledge.cpp src/zerocoin/Coin.cpp src/zerocoin/CoinSpend.cpp src/zerocoin/Commitment.cpp src/zerocoin/ParamGeneration.cpp src/zerocoin/Params.cpp src/zerocoin/SerialNumberSignatureOfKnowledge.cpp src/zerocoin/SpendMetaData.cpp src/zerocoin/ZeroTest.cpp build/Evotion-qt1.0.7/ && $(COPY_FILE) --parents src/qt/forms/coincontroldialog.ui src/qt/forms/sendcoinsdialog.ui src/qt/forms/addressbookpage.ui src/qt/forms/signverifymessagedialog.ui src/qt/forms/aboutdialog.ui src/qt/forms/editaddressdialog.ui src/qt/forms/transactiondescdialog.ui src/qt/forms/overviewpage.ui src/qt/forms/sendcoinsentry.ui src/qt/forms/askpassphrasedialog.ui src/qt/forms/rpcconsole.ui src/qt/forms/optionsdialog.ui build/Evotion-qt1.0.7/ && $(COPY_FILE) --parents src/qt/locale/evotion_af_ZA.ts src/qt/locale/evotion_ar.ts src/qt/locale/evotion_be_BY.ts src/qt/locale/evotion_bg.ts src/qt/locale/evotion_bs.ts src/qt/locale/evotion_ca.ts src/qt/locale/evotion_ca@valencia.ts src/qt/locale/evotion_ca_ES.ts src/qt/locale/evotion_cs.ts src/qt/locale/evotion_cy.ts src/qt/locale/evotion_da.ts src/qt/locale/evotion_de.ts src/qt/locale/evotion_el_GR.ts src/qt/locale/evotion_en.ts src/qt/locale/evotion_eo.ts src/qt/locale/evotion_es.ts src/qt/locale/evotion_es_CL.ts src/qt/locale/evotion_es_DO.ts src/qt/locale/evotion_es_MX.ts src/qt/locale/evotion_es_UY.ts src/qt/locale/evotion_et.ts src/qt/locale/evotion_eu_ES.ts src/qt/locale/evotion_fa.ts src/qt/locale/evotion_fa_IR.ts src/qt/locale/evotion_fi.ts src/qt/locale/evotion_fr.ts src/qt/locale/evotion_fr_CA.ts src/qt/locale/evotion_gl.ts src/qt/locale/evotion_he.ts src/qt/locale/evotion_hi_IN.ts src/qt/locale/evotion_hr.ts src/qt/locale/evotion_hu.ts src/qt/locale/evotion_id_ID.ts src/qt/locale/evotion_it.ts src/qt/locale/evotion_ja.ts src/qt/locale/evotion_ka.ts src/qt/locale/evotion_kk_KZ.ts src/qt/locale/evotion_ko_KR.ts src/qt/locale/evotion_ky.ts src/qt/locale/evotion_la.ts src/qt/locale/evotion_lt.ts src/qt/locale/evotion_lv_LV.ts src/qt/locale/evotion_ms_MY.ts src/qt/locale/evotion_nb.ts src/qt/locale/evotion_nl.ts src/qt/locale/evotion_pam.ts src/qt/locale/evotion_pl.ts src/qt/locale/evotion_pt_BR.ts src/qt/locale/evotion_pt_PT.ts src/qt/locale/evotion_ro_RO.ts src/qt/locale/evotion_ru.ts src/qt/locale/evotion_sah.ts src/qt/locale/evotion_sk.ts src/qt/locale/evotion_sl_SI.ts src/qt/locale/evotion_sq.ts src/qt/locale/evotion_sr.ts src/qt/locale/evotion_sv.ts src/qt/locale/evotion_th_TH.ts src/qt/locale/evotion_tr.ts src/qt/locale/evotion_uk.ts src/qt/locale/evotion_ur_PK.ts src/qt/locale/evotion_vi.ts src/qt/locale/evotion_vi_VN.ts src/qt/locale/evotion_zh_CN.ts src/qt/locale/evotion_zh_TW.ts build/Evotion-qt1.0.7/ && (cd `dirname build/Evotion-qt1.0.7` && $(TAR) Evotion-qt1.0.7.tar Evotion-qt1.0.7 && $(COMPRESS) Evotion-qt1.0.7.tar) && $(MOVE) `dirname build/Evotion-qt1.0.7`/Evotion-qt1.0.7.tar.gz . && $(DEL_FILE) -r build/Evotion-qt1.0.7
 
 
 clean:compiler_clean 
@@ -403,209 +403,209 @@ mocclean: compiler_moc_header_clean compiler_moc_source_clean
 
 mocables: compiler_moc_header_make_all compiler_moc_source_make_all
 
-compiler_TSQM_make_all: src/qt/locale/bitcoin_af_ZA.qm src/qt/locale/bitcoin_ar.qm src/qt/locale/bitcoin_be_BY.qm src/qt/locale/bitcoin_bg.qm src/qt/locale/bitcoin_bs.qm src/qt/locale/bitcoin_ca.qm src/qt/locale/bitcoin_ca@valencia.qm src/qt/locale/bitcoin_ca_ES.qm src/qt/locale/bitcoin_cs.qm src/qt/locale/bitcoin_cy.qm src/qt/locale/bitcoin_da.qm src/qt/locale/bitcoin_de.qm src/qt/locale/bitcoin_el_GR.qm src/qt/locale/bitcoin_en.qm src/qt/locale/bitcoin_eo.qm src/qt/locale/bitcoin_es.qm src/qt/locale/bitcoin_es_CL.qm src/qt/locale/bitcoin_es_DO.qm src/qt/locale/bitcoin_es_MX.qm src/qt/locale/bitcoin_es_UY.qm src/qt/locale/bitcoin_et.qm src/qt/locale/bitcoin_eu_ES.qm src/qt/locale/bitcoin_fa.qm src/qt/locale/bitcoin_fa_IR.qm src/qt/locale/bitcoin_fi.qm src/qt/locale/bitcoin_fr.qm src/qt/locale/bitcoin_fr_CA.qm src/qt/locale/bitcoin_gl.qm src/qt/locale/bitcoin_he.qm src/qt/locale/bitcoin_hi_IN.qm src/qt/locale/bitcoin_hr.qm src/qt/locale/bitcoin_hu.qm src/qt/locale/bitcoin_id_ID.qm src/qt/locale/bitcoin_it.qm src/qt/locale/bitcoin_ja.qm src/qt/locale/bitcoin_ka.qm src/qt/locale/bitcoin_kk_KZ.qm src/qt/locale/bitcoin_ko_KR.qm src/qt/locale/bitcoin_ky.qm src/qt/locale/bitcoin_la.qm src/qt/locale/bitcoin_lt.qm src/qt/locale/bitcoin_lv_LV.qm src/qt/locale/bitcoin_ms_MY.qm src/qt/locale/bitcoin_nb.qm src/qt/locale/bitcoin_nl.qm src/qt/locale/bitcoin_pam.qm src/qt/locale/bitcoin_pl.qm src/qt/locale/bitcoin_pt_BR.qm src/qt/locale/bitcoin_pt_PT.qm src/qt/locale/bitcoin_ro_RO.qm src/qt/locale/bitcoin_ru.qm src/qt/locale/bitcoin_sah.qm src/qt/locale/bitcoin_sk.qm src/qt/locale/bitcoin_sl_SI.qm src/qt/locale/bitcoin_sq.qm src/qt/locale/bitcoin_sr.qm src/qt/locale/bitcoin_sv.qm src/qt/locale/bitcoin_th_TH.qm src/qt/locale/bitcoin_tr.qm src/qt/locale/bitcoin_uk.qm src/qt/locale/bitcoin_ur_PK.qm src/qt/locale/bitcoin_vi.qm src/qt/locale/bitcoin_vi_VN.qm src/qt/locale/bitcoin_zh_CN.qm src/qt/locale/bitcoin_zh_TW.qm
+compiler_TSQM_make_all: src/qt/locale/evotion_af_ZA.qm src/qt/locale/evotion_ar.qm src/qt/locale/evotion_be_BY.qm src/qt/locale/evotion_bg.qm src/qt/locale/evotion_bs.qm src/qt/locale/evotion_ca.qm src/qt/locale/evotion_ca@valencia.qm src/qt/locale/evotion_ca_ES.qm src/qt/locale/evotion_cs.qm src/qt/locale/evotion_cy.qm src/qt/locale/evotion_da.qm src/qt/locale/evotion_de.qm src/qt/locale/evotion_el_GR.qm src/qt/locale/evotion_en.qm src/qt/locale/evotion_eo.qm src/qt/locale/evotion_es.qm src/qt/locale/evotion_es_CL.qm src/qt/locale/evotion_es_DO.qm src/qt/locale/evotion_es_MX.qm src/qt/locale/evotion_es_UY.qm src/qt/locale/evotion_et.qm src/qt/locale/evotion_eu_ES.qm src/qt/locale/evotion_fa.qm src/qt/locale/evotion_fa_IR.qm src/qt/locale/evotion_fi.qm src/qt/locale/evotion_fr.qm src/qt/locale/evotion_fr_CA.qm src/qt/locale/evotion_gl.qm src/qt/locale/evotion_he.qm src/qt/locale/evotion_hi_IN.qm src/qt/locale/evotion_hr.qm src/qt/locale/evotion_hu.qm src/qt/locale/evotion_id_ID.qm src/qt/locale/evotion_it.qm src/qt/locale/evotion_ja.qm src/qt/locale/evotion_ka.qm src/qt/locale/evotion_kk_KZ.qm src/qt/locale/evotion_ko_KR.qm src/qt/locale/evotion_ky.qm src/qt/locale/evotion_la.qm src/qt/locale/evotion_lt.qm src/qt/locale/evotion_lv_LV.qm src/qt/locale/evotion_ms_MY.qm src/qt/locale/evotion_nb.qm src/qt/locale/evotion_nl.qm src/qt/locale/evotion_pam.qm src/qt/locale/evotion_pl.qm src/qt/locale/evotion_pt_BR.qm src/qt/locale/evotion_pt_PT.qm src/qt/locale/evotion_ro_RO.qm src/qt/locale/evotion_ru.qm src/qt/locale/evotion_sah.qm src/qt/locale/evotion_sk.qm src/qt/locale/evotion_sl_SI.qm src/qt/locale/evotion_sq.qm src/qt/locale/evotion_sr.qm src/qt/locale/evotion_sv.qm src/qt/locale/evotion_th_TH.qm src/qt/locale/evotion_tr.qm src/qt/locale/evotion_uk.qm src/qt/locale/evotion_ur_PK.qm src/qt/locale/evotion_vi.qm src/qt/locale/evotion_vi_VN.qm src/qt/locale/evotion_zh_CN.qm src/qt/locale/evotion_zh_TW.qm
 compiler_TSQM_clean:
-	-$(DEL_FILE) src/qt/locale/bitcoin_af_ZA.qm src/qt/locale/bitcoin_ar.qm src/qt/locale/bitcoin_be_BY.qm src/qt/locale/bitcoin_bg.qm src/qt/locale/bitcoin_bs.qm src/qt/locale/bitcoin_ca.qm src/qt/locale/bitcoin_ca@valencia.qm src/qt/locale/bitcoin_ca_ES.qm src/qt/locale/bitcoin_cs.qm src/qt/locale/bitcoin_cy.qm src/qt/locale/bitcoin_da.qm src/qt/locale/bitcoin_de.qm src/qt/locale/bitcoin_el_GR.qm src/qt/locale/bitcoin_en.qm src/qt/locale/bitcoin_eo.qm src/qt/locale/bitcoin_es.qm src/qt/locale/bitcoin_es_CL.qm src/qt/locale/bitcoin_es_DO.qm src/qt/locale/bitcoin_es_MX.qm src/qt/locale/bitcoin_es_UY.qm src/qt/locale/bitcoin_et.qm src/qt/locale/bitcoin_eu_ES.qm src/qt/locale/bitcoin_fa.qm src/qt/locale/bitcoin_fa_IR.qm src/qt/locale/bitcoin_fi.qm src/qt/locale/bitcoin_fr.qm src/qt/locale/bitcoin_fr_CA.qm src/qt/locale/bitcoin_gl.qm src/qt/locale/bitcoin_he.qm src/qt/locale/bitcoin_hi_IN.qm src/qt/locale/bitcoin_hr.qm src/qt/locale/bitcoin_hu.qm src/qt/locale/bitcoin_id_ID.qm src/qt/locale/bitcoin_it.qm src/qt/locale/bitcoin_ja.qm src/qt/locale/bitcoin_ka.qm src/qt/locale/bitcoin_kk_KZ.qm src/qt/locale/bitcoin_ko_KR.qm src/qt/locale/bitcoin_ky.qm src/qt/locale/bitcoin_la.qm src/qt/locale/bitcoin_lt.qm src/qt/locale/bitcoin_lv_LV.qm src/qt/locale/bitcoin_ms_MY.qm src/qt/locale/bitcoin_nb.qm src/qt/locale/bitcoin_nl.qm src/qt/locale/bitcoin_pam.qm src/qt/locale/bitcoin_pl.qm src/qt/locale/bitcoin_pt_BR.qm src/qt/locale/bitcoin_pt_PT.qm src/qt/locale/bitcoin_ro_RO.qm src/qt/locale/bitcoin_ru.qm src/qt/locale/bitcoin_sah.qm src/qt/locale/bitcoin_sk.qm src/qt/locale/bitcoin_sl_SI.qm src/qt/locale/bitcoin_sq.qm src/qt/locale/bitcoin_sr.qm src/qt/locale/bitcoin_sv.qm src/qt/locale/bitcoin_th_TH.qm src/qt/locale/bitcoin_tr.qm src/qt/locale/bitcoin_uk.qm src/qt/locale/bitcoin_ur_PK.qm src/qt/locale/bitcoin_vi.qm src/qt/locale/bitcoin_vi_VN.qm src/qt/locale/bitcoin_zh_CN.qm src/qt/locale/bitcoin_zh_TW.qm
-src/qt/locale/bitcoin_af_ZA.qm: src/qt/locale/bitcoin_af_ZA.ts
-	/usr/bin/lrelease src/qt/locale/bitcoin_af_ZA.ts -qm src/qt/locale/bitcoin_af_ZA.qm
+	-$(DEL_FILE) src/qt/locale/evotion_af_ZA.qm src/qt/locale/evotion_ar.qm src/qt/locale/evotion_be_BY.qm src/qt/locale/evotion_bg.qm src/qt/locale/evotion_bs.qm src/qt/locale/evotion_ca.qm src/qt/locale/evotion_ca@valencia.qm src/qt/locale/evotion_ca_ES.qm src/qt/locale/evotion_cs.qm src/qt/locale/evotion_cy.qm src/qt/locale/evotion_da.qm src/qt/locale/evotion_de.qm src/qt/locale/evotion_el_GR.qm src/qt/locale/evotion_en.qm src/qt/locale/evotion_eo.qm src/qt/locale/evotion_es.qm src/qt/locale/evotion_es_CL.qm src/qt/locale/evotion_es_DO.qm src/qt/locale/evotion_es_MX.qm src/qt/locale/evotion_es_UY.qm src/qt/locale/evotion_et.qm src/qt/locale/evotion_eu_ES.qm src/qt/locale/evotion_fa.qm src/qt/locale/evotion_fa_IR.qm src/qt/locale/evotion_fi.qm src/qt/locale/evotion_fr.qm src/qt/locale/evotion_fr_CA.qm src/qt/locale/evotion_gl.qm src/qt/locale/evotion_he.qm src/qt/locale/evotion_hi_IN.qm src/qt/locale/evotion_hr.qm src/qt/locale/evotion_hu.qm src/qt/locale/evotion_id_ID.qm src/qt/locale/evotion_it.qm src/qt/locale/evotion_ja.qm src/qt/locale/evotion_ka.qm src/qt/locale/evotion_kk_KZ.qm src/qt/locale/evotion_ko_KR.qm src/qt/locale/evotion_ky.qm src/qt/locale/evotion_la.qm src/qt/locale/evotion_lt.qm src/qt/locale/evotion_lv_LV.qm src/qt/locale/evotion_ms_MY.qm src/qt/locale/evotion_nb.qm src/qt/locale/evotion_nl.qm src/qt/locale/evotion_pam.qm src/qt/locale/evotion_pl.qm src/qt/locale/evotion_pt_BR.qm src/qt/locale/evotion_pt_PT.qm src/qt/locale/evotion_ro_RO.qm src/qt/locale/evotion_ru.qm src/qt/locale/evotion_sah.qm src/qt/locale/evotion_sk.qm src/qt/locale/evotion_sl_SI.qm src/qt/locale/evotion_sq.qm src/qt/locale/evotion_sr.qm src/qt/locale/evotion_sv.qm src/qt/locale/evotion_th_TH.qm src/qt/locale/evotion_tr.qm src/qt/locale/evotion_uk.qm src/qt/locale/evotion_ur_PK.qm src/qt/locale/evotion_vi.qm src/qt/locale/evotion_vi_VN.qm src/qt/locale/evotion_zh_CN.qm src/qt/locale/evotion_zh_TW.qm
+src/qt/locale/evotion_af_ZA.qm: src/qt/locale/evotion_af_ZA.ts
+	/usr/bin/lrelease src/qt/locale/evotion_af_ZA.ts -qm src/qt/locale/evotion_af_ZA.qm
 
-src/qt/locale/bitcoin_ar.qm: src/qt/locale/bitcoin_ar.ts
-	/usr/bin/lrelease src/qt/locale/bitcoin_ar.ts -qm src/qt/locale/bitcoin_ar.qm
+src/qt/locale/evotion_ar.qm: src/qt/locale/evotion_ar.ts
+	/usr/bin/lrelease src/qt/locale/evotion_ar.ts -qm src/qt/locale/evotion_ar.qm
 
-src/qt/locale/bitcoin_be_BY.qm: src/qt/locale/bitcoin_be_BY.ts
-	/usr/bin/lrelease src/qt/locale/bitcoin_be_BY.ts -qm src/qt/locale/bitcoin_be_BY.qm
+src/qt/locale/evotion_be_BY.qm: src/qt/locale/evotion_be_BY.ts
+	/usr/bin/lrelease src/qt/locale/evotion_be_BY.ts -qm src/qt/locale/evotion_be_BY.qm
 
-src/qt/locale/bitcoin_bg.qm: src/qt/locale/bitcoin_bg.ts
-	/usr/bin/lrelease src/qt/locale/bitcoin_bg.ts -qm src/qt/locale/bitcoin_bg.qm
+src/qt/locale/evotion_bg.qm: src/qt/locale/evotion_bg.ts
+	/usr/bin/lrelease src/qt/locale/evotion_bg.ts -qm src/qt/locale/evotion_bg.qm
 
-src/qt/locale/bitcoin_bs.qm: src/qt/locale/bitcoin_bs.ts
-	/usr/bin/lrelease src/qt/locale/bitcoin_bs.ts -qm src/qt/locale/bitcoin_bs.qm
+src/qt/locale/evotion_bs.qm: src/qt/locale/evotion_bs.ts
+	/usr/bin/lrelease src/qt/locale/evotion_bs.ts -qm src/qt/locale/evotion_bs.qm
 
-src/qt/locale/bitcoin_ca.qm: src/qt/locale/bitcoin_ca.ts
-	/usr/bin/lrelease src/qt/locale/bitcoin_ca.ts -qm src/qt/locale/bitcoin_ca.qm
+src/qt/locale/evotion_ca.qm: src/qt/locale/evotion_ca.ts
+	/usr/bin/lrelease src/qt/locale/evotion_ca.ts -qm src/qt/locale/evotion_ca.qm
 
-src/qt/locale/bitcoin_ca@valencia.qm: src/qt/locale/bitcoin_ca@valencia.ts
-	/usr/bin/lrelease src/qt/locale/bitcoin_ca@valencia.ts -qm src/qt/locale/bitcoin_ca@valencia.qm
+src/qt/locale/evotion_ca@valencia.qm: src/qt/locale/evotion_ca@valencia.ts
+	/usr/bin/lrelease src/qt/locale/evotion_ca@valencia.ts -qm src/qt/locale/evotion_ca@valencia.qm
 
-src/qt/locale/bitcoin_ca_ES.qm: src/qt/locale/bitcoin_ca_ES.ts
-	/usr/bin/lrelease src/qt/locale/bitcoin_ca_ES.ts -qm src/qt/locale/bitcoin_ca_ES.qm
+src/qt/locale/evotion_ca_ES.qm: src/qt/locale/evotion_ca_ES.ts
+	/usr/bin/lrelease src/qt/locale/evotion_ca_ES.ts -qm src/qt/locale/evotion_ca_ES.qm
 
-src/qt/locale/bitcoin_cs.qm: src/qt/locale/bitcoin_cs.ts
-	/usr/bin/lrelease src/qt/locale/bitcoin_cs.ts -qm src/qt/locale/bitcoin_cs.qm
+src/qt/locale/evotion_cs.qm: src/qt/locale/evotion_cs.ts
+	/usr/bin/lrelease src/qt/locale/evotion_cs.ts -qm src/qt/locale/evotion_cs.qm
 
-src/qt/locale/bitcoin_cy.qm: src/qt/locale/bitcoin_cy.ts
-	/usr/bin/lrelease src/qt/locale/bitcoin_cy.ts -qm src/qt/locale/bitcoin_cy.qm
+src/qt/locale/evotion_cy.qm: src/qt/locale/evotion_cy.ts
+	/usr/bin/lrelease src/qt/locale/evotion_cy.ts -qm src/qt/locale/evotion_cy.qm
 
-src/qt/locale/bitcoin_da.qm: src/qt/locale/bitcoin_da.ts
-	/usr/bin/lrelease src/qt/locale/bitcoin_da.ts -qm src/qt/locale/bitcoin_da.qm
+src/qt/locale/evotion_da.qm: src/qt/locale/evotion_da.ts
+	/usr/bin/lrelease src/qt/locale/evotion_da.ts -qm src/qt/locale/evotion_da.qm
 
-src/qt/locale/bitcoin_de.qm: src/qt/locale/bitcoin_de.ts
-	/usr/bin/lrelease src/qt/locale/bitcoin_de.ts -qm src/qt/locale/bitcoin_de.qm
+src/qt/locale/evotion_de.qm: src/qt/locale/evotion_de.ts
+	/usr/bin/lrelease src/qt/locale/evotion_de.ts -qm src/qt/locale/evotion_de.qm
 
-src/qt/locale/bitcoin_el_GR.qm: src/qt/locale/bitcoin_el_GR.ts
-	/usr/bin/lrelease src/qt/locale/bitcoin_el_GR.ts -qm src/qt/locale/bitcoin_el_GR.qm
+src/qt/locale/evotion_el_GR.qm: src/qt/locale/evotion_el_GR.ts
+	/usr/bin/lrelease src/qt/locale/evotion_el_GR.ts -qm src/qt/locale/evotion_el_GR.qm
 
-src/qt/locale/bitcoin_en.qm: src/qt/locale/bitcoin_en.ts
-	/usr/bin/lrelease src/qt/locale/bitcoin_en.ts -qm src/qt/locale/bitcoin_en.qm
+src/qt/locale/evotion_en.qm: src/qt/locale/evotion_en.ts
+	/usr/bin/lrelease src/qt/locale/evotion_en.ts -qm src/qt/locale/evotion_en.qm
 
-src/qt/locale/bitcoin_eo.qm: src/qt/locale/bitcoin_eo.ts
-	/usr/bin/lrelease src/qt/locale/bitcoin_eo.ts -qm src/qt/locale/bitcoin_eo.qm
+src/qt/locale/evotion_eo.qm: src/qt/locale/evotion_eo.ts
+	/usr/bin/lrelease src/qt/locale/evotion_eo.ts -qm src/qt/locale/evotion_eo.qm
 
-src/qt/locale/bitcoin_es.qm: src/qt/locale/bitcoin_es.ts
-	/usr/bin/lrelease src/qt/locale/bitcoin_es.ts -qm src/qt/locale/bitcoin_es.qm
+src/qt/locale/evotion_es.qm: src/qt/locale/evotion_es.ts
+	/usr/bin/lrelease src/qt/locale/evotion_es.ts -qm src/qt/locale/evotion_es.qm
 
-src/qt/locale/bitcoin_es_CL.qm: src/qt/locale/bitcoin_es_CL.ts
-	/usr/bin/lrelease src/qt/locale/bitcoin_es_CL.ts -qm src/qt/locale/bitcoin_es_CL.qm
+src/qt/locale/evotion_es_CL.qm: src/qt/locale/evotion_es_CL.ts
+	/usr/bin/lrelease src/qt/locale/evotion_es_CL.ts -qm src/qt/locale/evotion_es_CL.qm
 
-src/qt/locale/bitcoin_es_DO.qm: src/qt/locale/bitcoin_es_DO.ts
-	/usr/bin/lrelease src/qt/locale/bitcoin_es_DO.ts -qm src/qt/locale/bitcoin_es_DO.qm
+src/qt/locale/evotion_es_DO.qm: src/qt/locale/evotion_es_DO.ts
+	/usr/bin/lrelease src/qt/locale/evotion_es_DO.ts -qm src/qt/locale/evotion_es_DO.qm
 
-src/qt/locale/bitcoin_es_MX.qm: src/qt/locale/bitcoin_es_MX.ts
-	/usr/bin/lrelease src/qt/locale/bitcoin_es_MX.ts -qm src/qt/locale/bitcoin_es_MX.qm
+src/qt/locale/evotion_es_MX.qm: src/qt/locale/evotion_es_MX.ts
+	/usr/bin/lrelease src/qt/locale/evotion_es_MX.ts -qm src/qt/locale/evotion_es_MX.qm
 
-src/qt/locale/bitcoin_es_UY.qm: src/qt/locale/bitcoin_es_UY.ts
-	/usr/bin/lrelease src/qt/locale/bitcoin_es_UY.ts -qm src/qt/locale/bitcoin_es_UY.qm
+src/qt/locale/evotion_es_UY.qm: src/qt/locale/evotion_es_UY.ts
+	/usr/bin/lrelease src/qt/locale/evotion_es_UY.ts -qm src/qt/locale/evotion_es_UY.qm
 
-src/qt/locale/bitcoin_et.qm: src/qt/locale/bitcoin_et.ts
-	/usr/bin/lrelease src/qt/locale/bitcoin_et.ts -qm src/qt/locale/bitcoin_et.qm
+src/qt/locale/evotion_et.qm: src/qt/locale/evotion_et.ts
+	/usr/bin/lrelease src/qt/locale/evotion_et.ts -qm src/qt/locale/evotion_et.qm
 
-src/qt/locale/bitcoin_eu_ES.qm: src/qt/locale/bitcoin_eu_ES.ts
-	/usr/bin/lrelease src/qt/locale/bitcoin_eu_ES.ts -qm src/qt/locale/bitcoin_eu_ES.qm
+src/qt/locale/evotion_eu_ES.qm: src/qt/locale/evotion_eu_ES.ts
+	/usr/bin/lrelease src/qt/locale/evotion_eu_ES.ts -qm src/qt/locale/evotion_eu_ES.qm
 
-src/qt/locale/bitcoin_fa.qm: src/qt/locale/bitcoin_fa.ts
-	/usr/bin/lrelease src/qt/locale/bitcoin_fa.ts -qm src/qt/locale/bitcoin_fa.qm
+src/qt/locale/evotion_fa.qm: src/qt/locale/evotion_fa.ts
+	/usr/bin/lrelease src/qt/locale/evotion_fa.ts -qm src/qt/locale/evotion_fa.qm
 
-src/qt/locale/bitcoin_fa_IR.qm: src/qt/locale/bitcoin_fa_IR.ts
-	/usr/bin/lrelease src/qt/locale/bitcoin_fa_IR.ts -qm src/qt/locale/bitcoin_fa_IR.qm
+src/qt/locale/evotion_fa_IR.qm: src/qt/locale/evotion_fa_IR.ts
+	/usr/bin/lrelease src/qt/locale/evotion_fa_IR.ts -qm src/qt/locale/evotion_fa_IR.qm
 
-src/qt/locale/bitcoin_fi.qm: src/qt/locale/bitcoin_fi.ts
-	/usr/bin/lrelease src/qt/locale/bitcoin_fi.ts -qm src/qt/locale/bitcoin_fi.qm
+src/qt/locale/evotion_fi.qm: src/qt/locale/evotion_fi.ts
+	/usr/bin/lrelease src/qt/locale/evotion_fi.ts -qm src/qt/locale/evotion_fi.qm
 
-src/qt/locale/bitcoin_fr.qm: src/qt/locale/bitcoin_fr.ts
-	/usr/bin/lrelease src/qt/locale/bitcoin_fr.ts -qm src/qt/locale/bitcoin_fr.qm
+src/qt/locale/evotion_fr.qm: src/qt/locale/evotion_fr.ts
+	/usr/bin/lrelease src/qt/locale/evotion_fr.ts -qm src/qt/locale/evotion_fr.qm
 
-src/qt/locale/bitcoin_fr_CA.qm: src/qt/locale/bitcoin_fr_CA.ts
-	/usr/bin/lrelease src/qt/locale/bitcoin_fr_CA.ts -qm src/qt/locale/bitcoin_fr_CA.qm
+src/qt/locale/evotion_fr_CA.qm: src/qt/locale/evotion_fr_CA.ts
+	/usr/bin/lrelease src/qt/locale/evotion_fr_CA.ts -qm src/qt/locale/evotion_fr_CA.qm
 
-src/qt/locale/bitcoin_gl.qm: src/qt/locale/bitcoin_gl.ts
-	/usr/bin/lrelease src/qt/locale/bitcoin_gl.ts -qm src/qt/locale/bitcoin_gl.qm
+src/qt/locale/evotion_gl.qm: src/qt/locale/evotion_gl.ts
+	/usr/bin/lrelease src/qt/locale/evotion_gl.ts -qm src/qt/locale/evotion_gl.qm
 
-src/qt/locale/bitcoin_he.qm: src/qt/locale/bitcoin_he.ts
-	/usr/bin/lrelease src/qt/locale/bitcoin_he.ts -qm src/qt/locale/bitcoin_he.qm
+src/qt/locale/evotion_he.qm: src/qt/locale/evotion_he.ts
+	/usr/bin/lrelease src/qt/locale/evotion_he.ts -qm src/qt/locale/evotion_he.qm
 
-src/qt/locale/bitcoin_hi_IN.qm: src/qt/locale/bitcoin_hi_IN.ts
-	/usr/bin/lrelease src/qt/locale/bitcoin_hi_IN.ts -qm src/qt/locale/bitcoin_hi_IN.qm
+src/qt/locale/evotion_hi_IN.qm: src/qt/locale/evotion_hi_IN.ts
+	/usr/bin/lrelease src/qt/locale/evotion_hi_IN.ts -qm src/qt/locale/evotion_hi_IN.qm
 
-src/qt/locale/bitcoin_hr.qm: src/qt/locale/bitcoin_hr.ts
-	/usr/bin/lrelease src/qt/locale/bitcoin_hr.ts -qm src/qt/locale/bitcoin_hr.qm
+src/qt/locale/evotion_hr.qm: src/qt/locale/evotion_hr.ts
+	/usr/bin/lrelease src/qt/locale/evotion_hr.ts -qm src/qt/locale/evotion_hr.qm
 
-src/qt/locale/bitcoin_hu.qm: src/qt/locale/bitcoin_hu.ts
-	/usr/bin/lrelease src/qt/locale/bitcoin_hu.ts -qm src/qt/locale/bitcoin_hu.qm
+src/qt/locale/evotion_hu.qm: src/qt/locale/evotion_hu.ts
+	/usr/bin/lrelease src/qt/locale/evotion_hu.ts -qm src/qt/locale/evotion_hu.qm
 
-src/qt/locale/bitcoin_id_ID.qm: src/qt/locale/bitcoin_id_ID.ts
-	/usr/bin/lrelease src/qt/locale/bitcoin_id_ID.ts -qm src/qt/locale/bitcoin_id_ID.qm
+src/qt/locale/evotion_id_ID.qm: src/qt/locale/evotion_id_ID.ts
+	/usr/bin/lrelease src/qt/locale/evotion_id_ID.ts -qm src/qt/locale/evotion_id_ID.qm
 
-src/qt/locale/bitcoin_it.qm: src/qt/locale/bitcoin_it.ts
-	/usr/bin/lrelease src/qt/locale/bitcoin_it.ts -qm src/qt/locale/bitcoin_it.qm
+src/qt/locale/evotion_it.qm: src/qt/locale/evotion_it.ts
+	/usr/bin/lrelease src/qt/locale/evotion_it.ts -qm src/qt/locale/evotion_it.qm
 
-src/qt/locale/bitcoin_ja.qm: src/qt/locale/bitcoin_ja.ts
-	/usr/bin/lrelease src/qt/locale/bitcoin_ja.ts -qm src/qt/locale/bitcoin_ja.qm
+src/qt/locale/evotion_ja.qm: src/qt/locale/evotion_ja.ts
+	/usr/bin/lrelease src/qt/locale/evotion_ja.ts -qm src/qt/locale/evotion_ja.qm
 
-src/qt/locale/bitcoin_ka.qm: src/qt/locale/bitcoin_ka.ts
-	/usr/bin/lrelease src/qt/locale/bitcoin_ka.ts -qm src/qt/locale/bitcoin_ka.qm
+src/qt/locale/evotion_ka.qm: src/qt/locale/evotion_ka.ts
+	/usr/bin/lrelease src/qt/locale/evotion_ka.ts -qm src/qt/locale/evotion_ka.qm
 
-src/qt/locale/bitcoin_kk_KZ.qm: src/qt/locale/bitcoin_kk_KZ.ts
-	/usr/bin/lrelease src/qt/locale/bitcoin_kk_KZ.ts -qm src/qt/locale/bitcoin_kk_KZ.qm
+src/qt/locale/evotion_kk_KZ.qm: src/qt/locale/evotion_kk_KZ.ts
+	/usr/bin/lrelease src/qt/locale/evotion_kk_KZ.ts -qm src/qt/locale/evotion_kk_KZ.qm
 
-src/qt/locale/bitcoin_ko_KR.qm: src/qt/locale/bitcoin_ko_KR.ts
-	/usr/bin/lrelease src/qt/locale/bitcoin_ko_KR.ts -qm src/qt/locale/bitcoin_ko_KR.qm
+src/qt/locale/evotion_ko_KR.qm: src/qt/locale/evotion_ko_KR.ts
+	/usr/bin/lrelease src/qt/locale/evotion_ko_KR.ts -qm src/qt/locale/evotion_ko_KR.qm
 
-src/qt/locale/bitcoin_ky.qm: src/qt/locale/bitcoin_ky.ts
-	/usr/bin/lrelease src/qt/locale/bitcoin_ky.ts -qm src/qt/locale/bitcoin_ky.qm
+src/qt/locale/evotion_ky.qm: src/qt/locale/evotion_ky.ts
+	/usr/bin/lrelease src/qt/locale/evotion_ky.ts -qm src/qt/locale/evotion_ky.qm
 
-src/qt/locale/bitcoin_la.qm: src/qt/locale/bitcoin_la.ts
-	/usr/bin/lrelease src/qt/locale/bitcoin_la.ts -qm src/qt/locale/bitcoin_la.qm
+src/qt/locale/evotion_la.qm: src/qt/locale/evotion_la.ts
+	/usr/bin/lrelease src/qt/locale/evotion_la.ts -qm src/qt/locale/evotion_la.qm
 
-src/qt/locale/bitcoin_lt.qm: src/qt/locale/bitcoin_lt.ts
-	/usr/bin/lrelease src/qt/locale/bitcoin_lt.ts -qm src/qt/locale/bitcoin_lt.qm
+src/qt/locale/evotion_lt.qm: src/qt/locale/evotion_lt.ts
+	/usr/bin/lrelease src/qt/locale/evotion_lt.ts -qm src/qt/locale/evotion_lt.qm
 
-src/qt/locale/bitcoin_lv_LV.qm: src/qt/locale/bitcoin_lv_LV.ts
-	/usr/bin/lrelease src/qt/locale/bitcoin_lv_LV.ts -qm src/qt/locale/bitcoin_lv_LV.qm
+src/qt/locale/evotion_lv_LV.qm: src/qt/locale/evotion_lv_LV.ts
+	/usr/bin/lrelease src/qt/locale/evotion_lv_LV.ts -qm src/qt/locale/evotion_lv_LV.qm
 
-src/qt/locale/bitcoin_ms_MY.qm: src/qt/locale/bitcoin_ms_MY.ts
-	/usr/bin/lrelease src/qt/locale/bitcoin_ms_MY.ts -qm src/qt/locale/bitcoin_ms_MY.qm
+src/qt/locale/evotion_ms_MY.qm: src/qt/locale/evotion_ms_MY.ts
+	/usr/bin/lrelease src/qt/locale/evotion_ms_MY.ts -qm src/qt/locale/evotion_ms_MY.qm
 
-src/qt/locale/bitcoin_nb.qm: src/qt/locale/bitcoin_nb.ts
-	/usr/bin/lrelease src/qt/locale/bitcoin_nb.ts -qm src/qt/locale/bitcoin_nb.qm
+src/qt/locale/evotion_nb.qm: src/qt/locale/evotion_nb.ts
+	/usr/bin/lrelease src/qt/locale/evotion_nb.ts -qm src/qt/locale/evotion_nb.qm
 
-src/qt/locale/bitcoin_nl.qm: src/qt/locale/bitcoin_nl.ts
-	/usr/bin/lrelease src/qt/locale/bitcoin_nl.ts -qm src/qt/locale/bitcoin_nl.qm
+src/qt/locale/evotion_nl.qm: src/qt/locale/evotion_nl.ts
+	/usr/bin/lrelease src/qt/locale/evotion_nl.ts -qm src/qt/locale/evotion_nl.qm
 
-src/qt/locale/bitcoin_pam.qm: src/qt/locale/bitcoin_pam.ts
-	/usr/bin/lrelease src/qt/locale/bitcoin_pam.ts -qm src/qt/locale/bitcoin_pam.qm
+src/qt/locale/evotion_pam.qm: src/qt/locale/evotion_pam.ts
+	/usr/bin/lrelease src/qt/locale/evotion_pam.ts -qm src/qt/locale/evotion_pam.qm
 
-src/qt/locale/bitcoin_pl.qm: src/qt/locale/bitcoin_pl.ts
-	/usr/bin/lrelease src/qt/locale/bitcoin_pl.ts -qm src/qt/locale/bitcoin_pl.qm
+src/qt/locale/evotion_pl.qm: src/qt/locale/evotion_pl.ts
+	/usr/bin/lrelease src/qt/locale/evotion_pl.ts -qm src/qt/locale/evotion_pl.qm
 
-src/qt/locale/bitcoin_pt_BR.qm: src/qt/locale/bitcoin_pt_BR.ts
-	/usr/bin/lrelease src/qt/locale/bitcoin_pt_BR.ts -qm src/qt/locale/bitcoin_pt_BR.qm
+src/qt/locale/evotion_pt_BR.qm: src/qt/locale/evotion_pt_BR.ts
+	/usr/bin/lrelease src/qt/locale/evotion_pt_BR.ts -qm src/qt/locale/evotion_pt_BR.qm
 
-src/qt/locale/bitcoin_pt_PT.qm: src/qt/locale/bitcoin_pt_PT.ts
-	/usr/bin/lrelease src/qt/locale/bitcoin_pt_PT.ts -qm src/qt/locale/bitcoin_pt_PT.qm
+src/qt/locale/evotion_pt_PT.qm: src/qt/locale/evotion_pt_PT.ts
+	/usr/bin/lrelease src/qt/locale/evotion_pt_PT.ts -qm src/qt/locale/evotion_pt_PT.qm
 
-src/qt/locale/bitcoin_ro_RO.qm: src/qt/locale/bitcoin_ro_RO.ts
-	/usr/bin/lrelease src/qt/locale/bitcoin_ro_RO.ts -qm src/qt/locale/bitcoin_ro_RO.qm
+src/qt/locale/evotion_ro_RO.qm: src/qt/locale/evotion_ro_RO.ts
+	/usr/bin/lrelease src/qt/locale/evotion_ro_RO.ts -qm src/qt/locale/evotion_ro_RO.qm
 
-src/qt/locale/bitcoin_ru.qm: src/qt/locale/bitcoin_ru.ts
-	/usr/bin/lrelease src/qt/locale/bitcoin_ru.ts -qm src/qt/locale/bitcoin_ru.qm
+src/qt/locale/evotion_ru.qm: src/qt/locale/evotion_ru.ts
+	/usr/bin/lrelease src/qt/locale/evotion_ru.ts -qm src/qt/locale/evotion_ru.qm
 
-src/qt/locale/bitcoin_sah.qm: src/qt/locale/bitcoin_sah.ts
-	/usr/bin/lrelease src/qt/locale/bitcoin_sah.ts -qm src/qt/locale/bitcoin_sah.qm
+src/qt/locale/evotion_sah.qm: src/qt/locale/evotion_sah.ts
+	/usr/bin/lrelease src/qt/locale/evotion_sah.ts -qm src/qt/locale/evotion_sah.qm
 
-src/qt/locale/bitcoin_sk.qm: src/qt/locale/bitcoin_sk.ts
-	/usr/bin/lrelease src/qt/locale/bitcoin_sk.ts -qm src/qt/locale/bitcoin_sk.qm
+src/qt/locale/evotion_sk.qm: src/qt/locale/evotion_sk.ts
+	/usr/bin/lrelease src/qt/locale/evotion_sk.ts -qm src/qt/locale/evotion_sk.qm
 
-src/qt/locale/bitcoin_sl_SI.qm: src/qt/locale/bitcoin_sl_SI.ts
-	/usr/bin/lrelease src/qt/locale/bitcoin_sl_SI.ts -qm src/qt/locale/bitcoin_sl_SI.qm
+src/qt/locale/evotion_sl_SI.qm: src/qt/locale/evotion_sl_SI.ts
+	/usr/bin/lrelease src/qt/locale/evotion_sl_SI.ts -qm src/qt/locale/evotion_sl_SI.qm
 
-src/qt/locale/bitcoin_sq.qm: src/qt/locale/bitcoin_sq.ts
-	/usr/bin/lrelease src/qt/locale/bitcoin_sq.ts -qm src/qt/locale/bitcoin_sq.qm
+src/qt/locale/evotion_sq.qm: src/qt/locale/evotion_sq.ts
+	/usr/bin/lrelease src/qt/locale/evotion_sq.ts -qm src/qt/locale/evotion_sq.qm
 
-src/qt/locale/bitcoin_sr.qm: src/qt/locale/bitcoin_sr.ts
-	/usr/bin/lrelease src/qt/locale/bitcoin_sr.ts -qm src/qt/locale/bitcoin_sr.qm
+src/qt/locale/evotion_sr.qm: src/qt/locale/evotion_sr.ts
+	/usr/bin/lrelease src/qt/locale/evotion_sr.ts -qm src/qt/locale/evotion_sr.qm
 
-src/qt/locale/bitcoin_sv.qm: src/qt/locale/bitcoin_sv.ts
-	/usr/bin/lrelease src/qt/locale/bitcoin_sv.ts -qm src/qt/locale/bitcoin_sv.qm
+src/qt/locale/evotion_sv.qm: src/qt/locale/evotion_sv.ts
+	/usr/bin/lrelease src/qt/locale/evotion_sv.ts -qm src/qt/locale/evotion_sv.qm
 
-src/qt/locale/bitcoin_th_TH.qm: src/qt/locale/bitcoin_th_TH.ts
-	/usr/bin/lrelease src/qt/locale/bitcoin_th_TH.ts -qm src/qt/locale/bitcoin_th_TH.qm
+src/qt/locale/evotion_th_TH.qm: src/qt/locale/evotion_th_TH.ts
+	/usr/bin/lrelease src/qt/locale/evotion_th_TH.ts -qm src/qt/locale/evotion_th_TH.qm
 
-src/qt/locale/bitcoin_tr.qm: src/qt/locale/bitcoin_tr.ts
-	/usr/bin/lrelease src/qt/locale/bitcoin_tr.ts -qm src/qt/locale/bitcoin_tr.qm
+src/qt/locale/evotion_tr.qm: src/qt/locale/evotion_tr.ts
+	/usr/bin/lrelease src/qt/locale/evotion_tr.ts -qm src/qt/locale/evotion_tr.qm
 
-src/qt/locale/bitcoin_uk.qm: src/qt/locale/bitcoin_uk.ts
-	/usr/bin/lrelease src/qt/locale/bitcoin_uk.ts -qm src/qt/locale/bitcoin_uk.qm
+src/qt/locale/evotion_uk.qm: src/qt/locale/evotion_uk.ts
+	/usr/bin/lrelease src/qt/locale/evotion_uk.ts -qm src/qt/locale/evotion_uk.qm
 
-src/qt/locale/bitcoin_ur_PK.qm: src/qt/locale/bitcoin_ur_PK.ts
-	/usr/bin/lrelease src/qt/locale/bitcoin_ur_PK.ts -qm src/qt/locale/bitcoin_ur_PK.qm
+src/qt/locale/evotion_ur_PK.qm: src/qt/locale/evotion_ur_PK.ts
+	/usr/bin/lrelease src/qt/locale/evotion_ur_PK.ts -qm src/qt/locale/evotion_ur_PK.qm
 
-src/qt/locale/bitcoin_vi.qm: src/qt/locale/bitcoin_vi.ts
-	/usr/bin/lrelease src/qt/locale/bitcoin_vi.ts -qm src/qt/locale/bitcoin_vi.qm
+src/qt/locale/evotion_vi.qm: src/qt/locale/evotion_vi.ts
+	/usr/bin/lrelease src/qt/locale/evotion_vi.ts -qm src/qt/locale/evotion_vi.qm
 
-src/qt/locale/bitcoin_vi_VN.qm: src/qt/locale/bitcoin_vi_VN.ts
-	/usr/bin/lrelease src/qt/locale/bitcoin_vi_VN.ts -qm src/qt/locale/bitcoin_vi_VN.qm
+src/qt/locale/evotion_vi_VN.qm: src/qt/locale/evotion_vi_VN.ts
+	/usr/bin/lrelease src/qt/locale/evotion_vi_VN.ts -qm src/qt/locale/evotion_vi_VN.qm
 
-src/qt/locale/bitcoin_zh_CN.qm: src/qt/locale/bitcoin_zh_CN.ts
-	/usr/bin/lrelease src/qt/locale/bitcoin_zh_CN.ts -qm src/qt/locale/bitcoin_zh_CN.qm
+src/qt/locale/evotion_zh_CN.qm: src/qt/locale/evotion_zh_CN.ts
+	/usr/bin/lrelease src/qt/locale/evotion_zh_CN.ts -qm src/qt/locale/evotion_zh_CN.qm
 
-src/qt/locale/bitcoin_zh_TW.qm: src/qt/locale/bitcoin_zh_TW.ts
-	/usr/bin/lrelease src/qt/locale/bitcoin_zh_TW.ts -qm src/qt/locale/bitcoin_zh_TW.qm
+src/qt/locale/evotion_zh_TW.qm: src/qt/locale/evotion_zh_TW.ts
+	/usr/bin/lrelease src/qt/locale/evotion_zh_TW.ts -qm src/qt/locale/evotion_zh_TW.qm
 
-compiler_moc_header_make_all: build/moc_bitcoingui.cpp build/moc_transactiontablemodel.cpp build/moc_addresstablemodel.cpp build/moc_optionsdialog.cpp build/moc_coincontroldialog.cpp build/moc_coincontroltreewidget.cpp build/moc_sendcoinsdialog.cpp build/moc_addressbookpage.cpp build/moc_signverifymessagedialog.cpp build/moc_aboutdialog.cpp build/moc_editaddressdialog.cpp build/moc_bitcoinaddressvalidator.cpp build/moc_clientmodel.cpp build/moc_guiutil.cpp build/moc_optionsmodel.cpp build/moc_monitoreddatamapper.cpp build/moc_transactiondesc.cpp build/moc_transactiondescdialog.cpp build/moc_bitcoinamountfield.cpp build/moc_transactionfilterproxy.cpp build/moc_transactionview.cpp build/moc_walletmodel.cpp build/moc_overviewpage.cpp build/moc_csvmodelwriter.cpp build/moc_sendcoinsentry.cpp build/moc_qvalidatedlineedit.cpp build/moc_qvaluecombobox.cpp build/moc_askpassphrasedialog.cpp build/moc_notificator.cpp build/moc_rpcconsole.cpp
+compiler_moc_header_make_all: build/moc_evotiongui.cpp build/moc_transactiontablemodel.cpp build/moc_addresstablemodel.cpp build/moc_optionsdialog.cpp build/moc_coincontroldialog.cpp build/moc_coincontroltreewidget.cpp build/moc_sendcoinsdialog.cpp build/moc_addressbookpage.cpp build/moc_signverifymessagedialog.cpp build/moc_aboutdialog.cpp build/moc_editaddressdialog.cpp build/moc_evotionaddressvalidator.cpp build/moc_clientmodel.cpp build/moc_guiutil.cpp build/moc_optionsmodel.cpp build/moc_monitoreddatamapper.cpp build/moc_transactiondesc.cpp build/moc_transactiondescdialog.cpp build/moc_evotionamountfield.cpp build/moc_transactionfilterproxy.cpp build/moc_transactionview.cpp build/moc_walletmodel.cpp build/moc_overviewpage.cpp build/moc_csvmodelwriter.cpp build/moc_sendcoinsentry.cpp build/moc_qvalidatedlineedit.cpp build/moc_qvaluecombobox.cpp build/moc_askpassphrasedialog.cpp build/moc_notificator.cpp build/moc_rpcconsole.cpp
 compiler_moc_header_clean:
-	-$(DEL_FILE) build/moc_bitcoingui.cpp build/moc_transactiontablemodel.cpp build/moc_addresstablemodel.cpp build/moc_optionsdialog.cpp build/moc_coincontroldialog.cpp build/moc_coincontroltreewidget.cpp build/moc_sendcoinsdialog.cpp build/moc_addressbookpage.cpp build/moc_signverifymessagedialog.cpp build/moc_aboutdialog.cpp build/moc_editaddressdialog.cpp build/moc_bitcoinaddressvalidator.cpp build/moc_clientmodel.cpp build/moc_guiutil.cpp build/moc_optionsmodel.cpp build/moc_monitoreddatamapper.cpp build/moc_transactiondesc.cpp build/moc_transactiondescdialog.cpp build/moc_bitcoinamountfield.cpp build/moc_transactionfilterproxy.cpp build/moc_transactionview.cpp build/moc_walletmodel.cpp build/moc_overviewpage.cpp build/moc_csvmodelwriter.cpp build/moc_sendcoinsentry.cpp build/moc_qvalidatedlineedit.cpp build/moc_qvaluecombobox.cpp build/moc_askpassphrasedialog.cpp build/moc_notificator.cpp build/moc_rpcconsole.cpp
-build/moc_bitcoingui.cpp: src/qt/bitcoingui.h
-	/usr/bin/moc-qt4 $(DEFINES) $(INCPATH) src/qt/bitcoingui.h -o build/moc_bitcoingui.cpp
+	-$(DEL_FILE) build/moc_evotiongui.cpp build/moc_transactiontablemodel.cpp build/moc_addresstablemodel.cpp build/moc_optionsdialog.cpp build/moc_coincontroldialog.cpp build/moc_coincontroltreewidget.cpp build/moc_sendcoinsdialog.cpp build/moc_addressbookpage.cpp build/moc_signverifymessagedialog.cpp build/moc_aboutdialog.cpp build/moc_editaddressdialog.cpp build/moc_evotionaddressvalidator.cpp build/moc_clientmodel.cpp build/moc_guiutil.cpp build/moc_optionsmodel.cpp build/moc_monitoreddatamapper.cpp build/moc_transactiondesc.cpp build/moc_transactiondescdialog.cpp build/moc_evotionamountfield.cpp build/moc_transactionfilterproxy.cpp build/moc_transactionview.cpp build/moc_walletmodel.cpp build/moc_overviewpage.cpp build/moc_csvmodelwriter.cpp build/moc_sendcoinsentry.cpp build/moc_qvalidatedlineedit.cpp build/moc_qvaluecombobox.cpp build/moc_askpassphrasedialog.cpp build/moc_notificator.cpp build/moc_rpcconsole.cpp
+build/moc_evotiongui.cpp: src/qt/evotiongui.h
+	/usr/bin/moc-qt4 $(DEFINES) $(INCPATH) src/qt/evotiongui.h -o build/moc_evotiongui.cpp
 
 build/moc_transactiontablemodel.cpp: src/qt/transactiontablemodel.h
 	/usr/bin/moc-qt4 $(DEFINES) $(INCPATH) src/qt/transactiontablemodel.h -o build/moc_transactiontablemodel.cpp
@@ -637,8 +637,8 @@ build/moc_aboutdialog.cpp: src/qt/aboutdialog.h
 build/moc_editaddressdialog.cpp: src/qt/editaddressdialog.h
 	/usr/bin/moc-qt4 $(DEFINES) $(INCPATH) src/qt/editaddressdialog.h -o build/moc_editaddressdialog.cpp
 
-build/moc_bitcoinaddressvalidator.cpp: src/qt/bitcoinaddressvalidator.h
-	/usr/bin/moc-qt4 $(DEFINES) $(INCPATH) src/qt/bitcoinaddressvalidator.h -o build/moc_bitcoinaddressvalidator.cpp
+build/moc_evotionaddressvalidator.cpp: src/qt/evotionaddressvalidator.h
+	/usr/bin/moc-qt4 $(DEFINES) $(INCPATH) src/qt/evotionaddressvalidator.h -o build/moc_evotionaddressvalidator.cpp
 
 build/moc_clientmodel.cpp: src/qt/clientmodel.h
 	/usr/bin/moc-qt4 $(DEFINES) $(INCPATH) src/qt/clientmodel.h -o build/moc_clientmodel.cpp
@@ -658,8 +658,8 @@ build/moc_transactiondesc.cpp: src/qt/transactiondesc.h
 build/moc_transactiondescdialog.cpp: src/qt/transactiondescdialog.h
 	/usr/bin/moc-qt4 $(DEFINES) $(INCPATH) src/qt/transactiondescdialog.h -o build/moc_transactiondescdialog.cpp
 
-build/moc_bitcoinamountfield.cpp: src/qt/bitcoinamountfield.h
-	/usr/bin/moc-qt4 $(DEFINES) $(INCPATH) src/qt/bitcoinamountfield.h -o build/moc_bitcoinamountfield.cpp
+build/moc_evotionamountfield.cpp: src/qt/evotionamountfield.h
+	/usr/bin/moc-qt4 $(DEFINES) $(INCPATH) src/qt/evotionamountfield.h -o build/moc_evotionamountfield.cpp
 
 build/moc_transactionfilterproxy.cpp: src/qt/transactionfilterproxy.h
 	/usr/bin/moc-qt4 $(DEFINES) $(INCPATH) src/qt/transactionfilterproxy.h -o build/moc_transactionfilterproxy.cpp
@@ -695,49 +695,49 @@ build/moc_notificator.cpp: src/qt/notificator.h
 build/moc_rpcconsole.cpp: src/qt/rpcconsole.h
 	/usr/bin/moc-qt4 $(DEFINES) $(INCPATH) src/qt/rpcconsole.h -o build/moc_rpcconsole.cpp
 
-compiler_rcc_make_all: qrc_bitcoin.cpp
+compiler_rcc_make_all: qrc_evotion.cpp
 compiler_rcc_clean:
-	-$(DEL_FILE) qrc_bitcoin.cpp
-qrc_bitcoin.cpp: src/qt/bitcoin.qrc \
-		src/qt/locale/bitcoin_ka.qm \
-		src/qt/locale/bitcoin_ko_KR.qm \
-		src/qt/locale/bitcoin_fr.qm \
-		src/qt/locale/bitcoin_sk.qm \
-		src/qt/locale/bitcoin_gl.qm \
-		src/qt/locale/bitcoin_sv.qm \
-		src/qt/locale/bitcoin_pt_BR.qm \
-		src/qt/locale/bitcoin_da.qm \
-		src/qt/locale/bitcoin_zh_CN.qm \
-		src/qt/locale/bitcoin_he.qm \
-		src/qt/locale/bitcoin_pl.qm \
-		src/qt/locale/bitcoin_cs.qm \
-		src/qt/locale/bitcoin_de.qm \
-		src/qt/locale/bitcoin_tr.qm \
-		src/qt/locale/bitcoin_fr_CA.qm \
-		src/qt/locale/bitcoin_ca_ES.qm \
-		src/qt/locale/bitcoin_lt.qm \
-		src/qt/locale/bitcoin_zh_TW.qm \
-		src/qt/locale/bitcoin_hr.qm \
-		src/qt/locale/bitcoin_uk.qm \
-		src/qt/locale/bitcoin_sl_SI.qm \
-		src/qt/locale/bitcoin_hu.qm \
-		src/qt/locale/bitcoin_es_CL.qm \
-		src/qt/locale/bitcoin_pt_PT.qm \
-		src/qt/locale/bitcoin_ro_RO.qm \
-		src/qt/locale/bitcoin_nb.qm \
-		src/qt/locale/bitcoin_pam.qm \
-		src/qt/locale/bitcoin_el_GR.qm \
-		src/qt/locale/bitcoin_ja.qm \
-		src/qt/locale/bitcoin_en.qm \
-		src/qt/locale/bitcoin_eo.qm \
-		src/qt/locale/bitcoin_it.qm \
-		src/qt/locale/bitcoin_fa.qm \
-		src/qt/locale/bitcoin_es.qm \
-		src/qt/locale/bitcoin_ar.qm \
-		src/qt/locale/bitcoin_nl.qm \
-		src/qt/locale/bitcoin_es_DO.qm \
-		src/qt/locale/bitcoin_fi.qm \
-		src/qt/locale/bitcoin_ru.qm \
+	-$(DEL_FILE) qrc_evotion.cpp
+qrc_evotion.cpp: src/qt/evotion.qrc \
+		src/qt/locale/evotion_ka.qm \
+		src/qt/locale/evotion_ko_KR.qm \
+		src/qt/locale/evotion_fr.qm \
+		src/qt/locale/evotion_sk.qm \
+		src/qt/locale/evotion_gl.qm \
+		src/qt/locale/evotion_sv.qm \
+		src/qt/locale/evotion_pt_BR.qm \
+		src/qt/locale/evotion_da.qm \
+		src/qt/locale/evotion_zh_CN.qm \
+		src/qt/locale/evotion_he.qm \
+		src/qt/locale/evotion_pl.qm \
+		src/qt/locale/evotion_cs.qm \
+		src/qt/locale/evotion_de.qm \
+		src/qt/locale/evotion_tr.qm \
+		src/qt/locale/evotion_fr_CA.qm \
+		src/qt/locale/evotion_ca_ES.qm \
+		src/qt/locale/evotion_lt.qm \
+		src/qt/locale/evotion_zh_TW.qm \
+		src/qt/locale/evotion_hr.qm \
+		src/qt/locale/evotion_uk.qm \
+		src/qt/locale/evotion_sl_SI.qm \
+		src/qt/locale/evotion_hu.qm \
+		src/qt/locale/evotion_es_CL.qm \
+		src/qt/locale/evotion_pt_PT.qm \
+		src/qt/locale/evotion_ro_RO.qm \
+		src/qt/locale/evotion_nb.qm \
+		src/qt/locale/evotion_pam.qm \
+		src/qt/locale/evotion_el_GR.qm \
+		src/qt/locale/evotion_ja.qm \
+		src/qt/locale/evotion_en.qm \
+		src/qt/locale/evotion_eo.qm \
+		src/qt/locale/evotion_it.qm \
+		src/qt/locale/evotion_fa.qm \
+		src/qt/locale/evotion_es.qm \
+		src/qt/locale/evotion_ar.qm \
+		src/qt/locale/evotion_nl.qm \
+		src/qt/locale/evotion_es_DO.qm \
+		src/qt/locale/evotion_fi.qm \
+		src/qt/locale/evotion_ru.qm \
 		src/qt/res/images/about.png \
 		src/qt/res/images/splash.png \
 		src/qt/res/movies/update_spinner.mng \
@@ -784,7 +784,7 @@ qrc_bitcoin.cpp: src/qt/bitcoin.qrc \
 		src/qt/res/icons/debugwindow.png \
 		src/qt/res/icons/tx_output.png \
 		src/qt/res/icons/staking_off.png
-	/usr/bin/rcc -name bitcoin src/qt/bitcoin.qrc -o qrc_bitcoin.cpp
+	/usr/bin/rcc -name evotion src/qt/evotion.qrc -o qrc_evotion.cpp
 
 compiler_image_collection_make_all: build/qmake_image_collection.cpp
 compiler_image_collection_clean:
@@ -796,7 +796,7 @@ build/overviewpage.moc: src/qt/overviewpage.h \
 		build/ui_overviewpage.h \
 		src/qt/walletmodel.h \
 		src/allocators.h \
-		src/qt/bitcoinunits.h \
+		src/qt/evotionunits.h \
 		src/qt/optionsmodel.h \
 		src/qt/transactiontablemodel.h \
 		src/qt/transactionfilterproxy.h \
@@ -808,7 +808,7 @@ build/overviewpage.moc: src/qt/overviewpage.h \
 build/rpcconsole.moc: src/qt/rpcconsole.h \
 		build/ui_rpcconsole.h \
 		src/qt/clientmodel.h \
-		src/bitcoinrpc.h \
+		src/evotionrpc.h \
 		src/json/json_spirit_reader_template.h \
 		src/json/json_spirit_value.h \
 		src/json/json_spirit_error_position.h \
@@ -863,7 +863,7 @@ build/ui_overviewpage.h: src/qt/forms/overviewpage.ui
 
 build/ui_sendcoinsentry.h: src/qt/forms/sendcoinsentry.ui \
 		src/qt/qvalidatedlineedit.h \
-		src/qt/bitcoinamountfield.h
+		src/qt/evotionamountfield.h
 	/usr/bin/uic-qt4 src/qt/forms/sendcoinsentry.ui -o build/ui_sendcoinsentry.h
 
 build/ui_askpassphrasedialog.h: src/qt/forms/askpassphrasedialog.ui
@@ -873,7 +873,7 @@ build/ui_rpcconsole.h: src/qt/forms/rpcconsole.ui
 	/usr/bin/uic-qt4 src/qt/forms/rpcconsole.ui -o build/ui_rpcconsole.h
 
 build/ui_optionsdialog.h: src/qt/forms/optionsdialog.ui \
-		src/qt/bitcoinamountfield.h \
+		src/qt/evotionamountfield.h \
 		src/qt/qvaluecombobox.h \
 		src/qt/qvalidatedlineedit.h
 	/usr/bin/uic-qt4 src/qt/forms/optionsdialog.ui -o build/ui_optionsdialog.h
@@ -924,7 +924,7 @@ build/txdb-leveldb.o: src/txdb-leveldb.cpp src/kernel.h \
 		src/txdb-leveldb.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o build/txdb-leveldb.o src/txdb-leveldb.cpp
 
-build/bitcoin.o: src/qt/bitcoin.cpp src/qt/bitcoingui.h \
+build/evotion.o: src/qt/evotion.cpp src/qt/evotiongui.h \
 		src/qt/clientmodel.h \
 		src/qt/walletmodel.h \
 		src/allocators.h \
@@ -967,9 +967,9 @@ build/bitcoin.o: src/qt/bitcoin.cpp src/qt/bitcoingui.h \
 		src/db.h \
 		src/base58.h \
 		src/qt/qtipcserver.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o build/bitcoin.o src/qt/bitcoin.cpp
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o build/evotion.o src/qt/evotion.cpp
 
-build/bitcoingui.o: src/qt/bitcoingui.cpp src/qt/bitcoingui.h \
+build/evotiongui.o: src/qt/evotiongui.cpp src/qt/evotiongui.h \
 		src/qt/transactiontablemodel.h \
 		src/qt/addressbookpage.h \
 		src/qt/sendcoinsdialog.h \
@@ -985,7 +985,7 @@ build/bitcoingui.o: src/qt/bitcoingui.cpp src/qt/bitcoingui.h \
 		src/qt/addresstablemodel.h \
 		src/qt/transactionview.h \
 		src/qt/overviewpage.h \
-		src/qt/bitcoinunits.h \
+		src/qt/evotionunits.h \
 		src/qt/guiconstants.h \
 		src/qt/askpassphrasedialog.h \
 		src/qt/notificator.h \
@@ -1026,7 +1026,7 @@ build/bitcoingui.o: src/qt/bitcoingui.cpp src/qt/bitcoingui.h \
 		src/db.h \
 		src/base58.h \
 		src/qt/macdockiconhandler.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o build/bitcoingui.o src/qt/bitcoingui.cpp
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o build/evotiongui.o src/qt/evotiongui.cpp
 
 build/transactiontablemodel.o: src/qt/transactiontablemodel.cpp src/qt/transactiontablemodel.h \
 		src/qt/guiutil.h \
@@ -1038,7 +1038,7 @@ build/transactiontablemodel.o: src/qt/transactiontablemodel.cpp src/qt/transacti
 		src/allocators.h \
 		src/qt/optionsmodel.h \
 		src/qt/addresstablemodel.h \
-		src/qt/bitcoinunits.h \
+		src/qt/evotionunits.h \
 		src/wallet.h \
 		src/main.h \
 		src/bignum.h \
@@ -1116,10 +1116,10 @@ build/addresstablemodel.o: src/qt/addresstablemodel.cpp src/qt/addresstablemodel
 
 build/optionsdialog.o: src/qt/optionsdialog.cpp src/qt/optionsdialog.h \
 		build/ui_optionsdialog.h \
-		src/qt/bitcoinamountfield.h \
+		src/qt/evotionamountfield.h \
 		src/qt/qvalidatedlineedit.h \
 		src/qt/qvaluecombobox.h \
-		src/qt/bitcoinunits.h \
+		src/qt/evotionunits.h \
 		src/qt/monitoreddatamapper.h \
 		src/netbase.h \
 		src/serialize.h \
@@ -1171,7 +1171,7 @@ build/sendcoinsdialog.o: src/qt/sendcoinsdialog.cpp src/qt/sendcoinsdialog.h \
 		src/qt/walletmodel.h \
 		src/qt/addresstablemodel.h \
 		src/qt/addressbookpage.h \
-		src/qt/bitcoinunits.h \
+		src/qt/evotionunits.h \
 		src/qt/optionsmodel.h \
 		src/qt/sendcoinsentry.h \
 		src/qt/guiutil.h \
@@ -1219,7 +1219,7 @@ build/coincontroldialog.o: src/qt/coincontroldialog.cpp src/qt/coincontroldialog
 		src/walletdb.h \
 		src/db.h \
 		src/base58.h \
-		src/qt/bitcoinunits.h \
+		src/qt/evotionunits.h \
 		src/qt/walletmodel.h \
 		src/qt/addresstablemodel.h \
 		src/qt/optionsmodel.h \
@@ -1234,7 +1234,7 @@ build/addressbookpage.o: src/qt/addressbookpage.cpp src/qt/addressbookpage.h \
 		build/ui_addressbookpage.h \
 		src/qt/addresstablemodel.h \
 		src/qt/optionsmodel.h \
-		src/qt/bitcoingui.h \
+		src/qt/evotiongui.h \
 		src/qt/editaddressdialog.h \
 		src/qt/csvmodelwriter.h \
 		src/qt/guiutil.h \
@@ -1299,8 +1299,8 @@ build/editaddressdialog.o: src/qt/editaddressdialog.cpp src/qt/editaddressdialog
 		src/qt/guiutil.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o build/editaddressdialog.o src/qt/editaddressdialog.cpp
 
-build/bitcoinaddressvalidator.o: src/qt/bitcoinaddressvalidator.cpp src/qt/bitcoinaddressvalidator.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o build/bitcoinaddressvalidator.o src/qt/bitcoinaddressvalidator.cpp
+build/evotionaddressvalidator.o: src/qt/evotionaddressvalidator.cpp src/qt/evotionaddressvalidator.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o build/evotionaddressvalidator.o src/qt/evotionaddressvalidator.cpp
 
 build/alert.o: src/alert.cpp src/alert.h \
 		src/uint256.h \
@@ -1523,7 +1523,7 @@ build/init.o: src/init.cpp src/txdb.h \
 		src/walletdb.h \
 		src/db.h \
 		src/base58.h \
-		src/bitcoinrpc.h \
+		src/evotionrpc.h \
 		src/json/json_spirit_reader_template.h \
 		src/json/json_spirit_value.h \
 		src/json/json_spirit_error_position.h \
@@ -1758,10 +1758,10 @@ build/clientmodel.o: src/qt/clientmodel.cpp src/qt/clientmodel.h \
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o build/clientmodel.o src/qt/clientmodel.cpp
 
 build/guiutil.o: src/qt/guiutil.cpp src/qt/guiutil.h \
-		src/qt/bitcoinaddressvalidator.h \
+		src/qt/evotionaddressvalidator.h \
 		src/qt/walletmodel.h \
 		src/allocators.h \
-		src/qt/bitcoinunits.h \
+		src/qt/evotionunits.h \
 		src/util.h \
 		src/uint256.h \
 		src/netbase.h \
@@ -1838,7 +1838,7 @@ build/transactionrecord.o: src/qt/transactionrecord.cpp src/qt/transactionrecord
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o build/transactionrecord.o src/qt/transactionrecord.cpp
 
 build/optionsmodel.o: src/qt/optionsmodel.cpp src/qt/optionsmodel.h \
-		src/qt/bitcoinunits.h \
+		src/qt/evotionunits.h \
 		src/init.h \
 		src/wallet.h \
 		src/main.h \
@@ -1883,7 +1883,7 @@ build/monitoreddatamapper.o: src/qt/monitoreddatamapper.cpp src/qt/monitoreddata
 
 build/transactiondesc.o: src/qt/transactiondesc.cpp src/qt/transactiondesc.h \
 		src/qt/guiutil.h \
-		src/qt/bitcoinunits.h \
+		src/qt/evotionunits.h \
 		src/main.h \
 		src/bignum.h \
 		src/serialize.h \
@@ -1928,14 +1928,14 @@ build/transactiondescdialog.o: src/qt/transactiondescdialog.cpp src/qt/transacti
 		src/qt/transactiontablemodel.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o build/transactiondescdialog.o src/qt/transactiondescdialog.cpp
 
-build/bitcoinstrings.o: src/qt/bitcoinstrings.cpp 
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o build/bitcoinstrings.o src/qt/bitcoinstrings.cpp
+build/evotionstrings.o: src/qt/evotionstrings.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o build/evotionstrings.o src/qt/evotionstrings.cpp
 
-build/bitcoinamountfield.o: src/qt/bitcoinamountfield.cpp src/qt/bitcoinamountfield.h \
+build/evotionamountfield.o: src/qt/evotionamountfield.cpp src/qt/evotionamountfield.h \
 		src/qt/qvaluecombobox.h \
-		src/qt/bitcoinunits.h \
+		src/qt/evotionunits.h \
 		src/qt/guiconstants.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o build/bitcoinamountfield.o src/qt/bitcoinamountfield.cpp
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o build/evotionamountfield.o src/qt/evotionamountfield.cpp
 
 build/wallet.o: src/wallet.cpp src/txdb.h \
 		src/txdb-leveldb.h \
@@ -2008,7 +2008,7 @@ build/transactionview.o: src/qt/transactionview.cpp src/qt/transactionview.h \
 		src/allocators.h \
 		src/qt/addresstablemodel.h \
 		src/qt/transactiontablemodel.h \
-		src/qt/bitcoinunits.h \
+		src/qt/evotionunits.h \
 		src/qt/csvmodelwriter.h \
 		src/qt/transactiondescdialog.h \
 		src/qt/editaddressdialog.h \
@@ -2058,7 +2058,7 @@ build/walletmodel.o: src/qt/walletmodel.cpp src/qt/walletmodel.h \
 		src/base58.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o build/walletmodel.o src/qt/walletmodel.cpp
 
-build/bitcoinrpc.o: src/bitcoinrpc.cpp src/init.h \
+build/evotionrpc.o: src/evotionrpc.cpp src/init.h \
 		src/wallet.h \
 		src/main.h \
 		src/bignum.h \
@@ -2094,14 +2094,14 @@ build/bitcoinrpc.o: src/bitcoinrpc.cpp src/init.h \
 		src/walletdb.h \
 		src/db.h \
 		src/base58.h \
-		src/bitcoinrpc.h \
+		src/evotionrpc.h \
 		src/json/json_spirit_reader_template.h \
 		src/json/json_spirit_value.h \
 		src/json/json_spirit_error_position.h \
 		src/json/json_spirit_writer_template.h \
 		src/json/json_spirit_utils.h \
 		src/checkpoints.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o build/bitcoinrpc.o src/bitcoinrpc.cpp
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o build/evotionrpc.o src/evotionrpc.cpp
 
 build/rpcdump.o: src/rpcdump.cpp src/init.h \
 		src/wallet.h \
@@ -2139,7 +2139,7 @@ build/rpcdump.o: src/rpcdump.cpp src/init.h \
 		src/walletdb.h \
 		src/db.h \
 		src/base58.h \
-		src/bitcoinrpc.h \
+		src/evotionrpc.h \
 		src/json/json_spirit_reader_template.h \
 		src/json/json_spirit_value.h \
 		src/json/json_spirit_error_position.h \
@@ -2161,7 +2161,7 @@ build/rpcnet.o: src/rpcnet.cpp src/net.h \
 		src/addrman.h \
 		src/util.h \
 		src/sync.h \
-		src/bitcoinrpc.h \
+		src/evotionrpc.h \
 		src/json/json_spirit_reader_template.h \
 		src/json/json_spirit_value.h \
 		src/json/json_spirit_error_position.h \
@@ -2232,7 +2232,7 @@ build/rpcmining.o: src/rpcmining.cpp src/main.h \
 		src/walletdb.h \
 		src/base58.h \
 		src/miner.h \
-		src/bitcoinrpc.h \
+		src/evotionrpc.h \
 		src/json/json_spirit_reader_template.h \
 		src/json/json_spirit_value.h \
 		src/json/json_spirit_error_position.h \
@@ -2276,7 +2276,7 @@ build/rpcwallet.o: src/rpcwallet.cpp src/wallet.h \
 		src/walletdb.h \
 		src/db.h \
 		src/base58.h \
-		src/bitcoinrpc.h \
+		src/evotionrpc.h \
 		src/json/json_spirit_reader_template.h \
 		src/json/json_spirit_value.h \
 		src/json/json_spirit_error_position.h \
@@ -2316,7 +2316,7 @@ build/rpcblockchain.o: src/rpcblockchain.cpp src/main.h \
 		src/zerocoin/SerialNumberSignatureOfKnowledge.h \
 		src/zerocoin/SpendMetaData.h \
 		src/zerocoin/ParamGeneration.h \
-		src/bitcoinrpc.h \
+		src/evotionrpc.h \
 		src/json/json_spirit_reader_template.h \
 		src/json/json_spirit_value.h \
 		src/json/json_spirit_error_position.h \
@@ -2340,7 +2340,7 @@ build/rpcrawtransaction.o: src/rpcrawtransaction.cpp src/base58.h \
 		src/keystore.h \
 		src/crypter.h \
 		src/sync.h \
-		src/bitcoinrpc.h \
+		src/evotionrpc.h \
 		src/json/json_spirit_reader_template.h \
 		src/json/json_spirit_value.h \
 		src/json/json_spirit_error_position.h \
@@ -2376,7 +2376,7 @@ build/overviewpage.o: src/qt/overviewpage.cpp src/qt/overviewpage.h \
 		build/ui_overviewpage.h \
 		src/qt/walletmodel.h \
 		src/allocators.h \
-		src/qt/bitcoinunits.h \
+		src/qt/evotionunits.h \
 		src/qt/optionsmodel.h \
 		src/qt/transactiontablemodel.h \
 		src/qt/transactionfilterproxy.h \
@@ -2408,10 +2408,10 @@ build/crypter.o: src/crypter.cpp src/crypter.h \
 
 build/sendcoinsentry.o: src/qt/sendcoinsentry.cpp src/qt/sendcoinsentry.h \
 		build/ui_sendcoinsentry.h \
-		src/qt/bitcoinamountfield.h \
+		src/qt/evotionamountfield.h \
 		src/qt/qvalidatedlineedit.h \
 		src/qt/guiutil.h \
-		src/qt/bitcoinunits.h \
+		src/qt/evotionunits.h \
 		src/qt/addressbookpage.h \
 		src/qt/walletmodel.h \
 		src/allocators.h \
@@ -2423,8 +2423,8 @@ build/qvalidatedlineedit.o: src/qt/qvalidatedlineedit.cpp src/qt/qvalidatedlinee
 		src/qt/guiconstants.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o build/qvalidatedlineedit.o src/qt/qvalidatedlineedit.cpp
 
-build/bitcoinunits.o: src/qt/bitcoinunits.cpp src/qt/bitcoinunits.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o build/bitcoinunits.o src/qt/bitcoinunits.cpp
+build/evotionunits.o: src/qt/evotionunits.cpp src/qt/evotionunits.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o build/evotionunits.o src/qt/evotionunits.cpp
 
 build/qvaluecombobox.o: src/qt/qvaluecombobox.cpp src/qt/qvaluecombobox.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o build/qvaluecombobox.o src/qt/qvaluecombobox.cpp
@@ -2466,7 +2466,7 @@ build/qtipcserver.o: src/qt/qtipcserver.cpp src/qt/qtipcserver.h \
 build/rpcconsole.o: src/qt/rpcconsole.cpp src/qt/rpcconsole.h \
 		build/ui_rpcconsole.h \
 		src/qt/clientmodel.h \
-		src/bitcoinrpc.h \
+		src/evotionrpc.h \
 		src/json/json_spirit_reader_template.h \
 		src/json/json_spirit_value.h \
 		src/json/json_spirit_error_position.h \
@@ -2526,7 +2526,7 @@ build/noui.o: src/noui.cpp src/ui_interface.h \
 		src/walletdb.h \
 		src/db.h \
 		src/base58.h \
-		src/bitcoinrpc.h \
+		src/evotionrpc.h \
 		src/json/json_spirit_reader_template.h \
 		src/json/json_spirit_value.h \
 		src/json/json_spirit_error_position.h \
@@ -2809,8 +2809,8 @@ build/ZeroTest.o: src/zerocoin/ZeroTest.cpp src/zerocoin/Zerocoin.h \
 		src/zerocoin/ParamGeneration.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o build/ZeroTest.o src/zerocoin/ZeroTest.cpp
 
-build/moc_bitcoingui.o: build/moc_bitcoingui.cpp 
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o build/moc_bitcoingui.o build/moc_bitcoingui.cpp
+build/moc_evotiongui.o: build/moc_evotiongui.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o build/moc_evotiongui.o build/moc_evotiongui.cpp
 
 build/moc_transactiontablemodel.o: build/moc_transactiontablemodel.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o build/moc_transactiontablemodel.o build/moc_transactiontablemodel.cpp
@@ -2842,8 +2842,8 @@ build/moc_aboutdialog.o: build/moc_aboutdialog.cpp
 build/moc_editaddressdialog.o: build/moc_editaddressdialog.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o build/moc_editaddressdialog.o build/moc_editaddressdialog.cpp
 
-build/moc_bitcoinaddressvalidator.o: build/moc_bitcoinaddressvalidator.cpp 
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o build/moc_bitcoinaddressvalidator.o build/moc_bitcoinaddressvalidator.cpp
+build/moc_evotionaddressvalidator.o: build/moc_evotionaddressvalidator.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o build/moc_evotionaddressvalidator.o build/moc_evotionaddressvalidator.cpp
 
 build/moc_clientmodel.o: build/moc_clientmodel.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o build/moc_clientmodel.o build/moc_clientmodel.cpp
@@ -2863,8 +2863,8 @@ build/moc_transactiondesc.o: build/moc_transactiondesc.cpp
 build/moc_transactiondescdialog.o: build/moc_transactiondescdialog.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o build/moc_transactiondescdialog.o build/moc_transactiondescdialog.cpp
 
-build/moc_bitcoinamountfield.o: build/moc_bitcoinamountfield.cpp 
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o build/moc_bitcoinamountfield.o build/moc_bitcoinamountfield.cpp
+build/moc_evotionamountfield.o: build/moc_evotionamountfield.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o build/moc_evotionamountfield.o build/moc_evotionamountfield.cpp
 
 build/moc_transactionfilterproxy.o: build/moc_transactionfilterproxy.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o build/moc_transactionfilterproxy.o build/moc_transactionfilterproxy.cpp
@@ -2899,8 +2899,8 @@ build/moc_notificator.o: build/moc_notificator.cpp
 build/moc_rpcconsole.o: build/moc_rpcconsole.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o build/moc_rpcconsole.o build/moc_rpcconsole.cpp
 
-build/qrc_bitcoin.o: qrc_bitcoin.cpp 
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o build/qrc_bitcoin.o qrc_bitcoin.cpp
+build/qrc_evotion.o: qrc_evotion.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o build/qrc_evotion.o qrc_evotion.cpp
 
 ####### Install
 

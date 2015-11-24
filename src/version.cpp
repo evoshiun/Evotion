@@ -1,4 +1,4 @@
-// Copyright (c) 2012 The Bitcoin developers
+// Copyright (c) 2015 Evotion
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 #include <string>
@@ -6,12 +6,12 @@
 #include "version.h"
 
 // Name of client reported in the 'version' message. Report the same name
-// for both bitcoind and bitcoin-qt, to make it harder for attackers to
+// for both evotiond and evotion-qt, to make it harder for attackers to
 // target servers or GUI users specifically.
 const std::string CLIENT_NAME("Evotion");
 
 // Client version number
-#define CLIENT_VERSION_SUFFIX   "-Beta"
+#define CLIENT_VERSION_SUFFIX   "-alpha"
 
 
 // The following part of the code determines the CLIENT_BUILD variable.

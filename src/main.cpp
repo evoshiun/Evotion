@@ -1657,7 +1657,7 @@ bool CBlock::ConnectBlock(CTxDB& txdb, CBlockIndex* pindex, bool fJustCheck)
 
     // Update block index on disk without changing it in memory.
     // The memory index structure will be changed after the db commits.
-    if (pindex->pprev);
+    if (pindex->pprev)
     {
         CDiskBlockIndex blockindexPrev(pindex->pprev);
         blockindexPrev.hashNext = pindex->GetBlockHash();

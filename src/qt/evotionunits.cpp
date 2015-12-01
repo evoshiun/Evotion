@@ -11,9 +11,9 @@ EvotionUnits::EvotionUnits(QObject *parent):
 QList<EvotionUnits::Unit> EvotionUnits::availableUnits()
 {
     QList<EvotionUnits::Unit> unitlist;
-    unitlist.append(BTC);
-    unitlist.append(mBTC);
-    unitlist.append(uBTC);
+    unitlist.append(EVO);
+    unitlist.append(mEVO);
+    unitlist.append(uEVO);
     return unitlist;
 }
 
@@ -21,9 +21,9 @@ bool EvotionUnits::valid(int unit)
 {
     switch(unit)
     {
-    case BTC:
-    case mBTC:
-    case uBTC:
+    case EVO:
+    case mEVO:
+    case uEVO:
         return true;
     default:
         return false;
@@ -34,9 +34,9 @@ QString EvotionUnits::name(int unit)
 {
     switch(unit)
     {
-    case BTC: return QString("EVO");
-    case mBTC: return QString("bEVO");
-    case uBTC: return QString::fromUtf8("sEVO");
+    case EVO: return QString("EVO");
+    case mEVO: return QString("bEVO");
+    case uEVO: return QString::fromUtf8("sEVO");
     default: return QString("???");
     }
 }
@@ -45,9 +45,9 @@ QString EvotionUnits::description(int unit)
 {
     switch(unit)
     {
-    case BTC: return QString("Evotion");
-    case mBTC: return QString("Big-Evotion (1 / 1,000)");
-    case uBTC: return QString("Small-Evotion (1 / 1,000,000)");
+    case EVO: return QString("Evotion");
+    case mEVO: return QString("Big-Evotion (1 / 1,000)");
+    case uEVO: return QString("Small-Evotion (1 / 1,000,000)");
     default: return QString("???");
     }
 }
@@ -56,9 +56,9 @@ qint64 EvotionUnits::factor(int unit)
 {
     switch(unit)
     {
-    case BTC:  return 100000000;
-    case mBTC: return 100000;
-    case uBTC: return 100;
+    case EVO:  return 100000000;
+    case mEVO: return 100000;
+    case uEVO: return 100;
     default:   return 100000000;
     }
 }
@@ -67,9 +67,9 @@ int EvotionUnits::amountDigits(int unit)
 {
     switch(unit)
     {
-    case BTC: return 8; // 21,000,000 (# digits, without commas)
-    case mBTC: return 11; // 21,000,000,000
-    case uBTC: return 14; // 21,000,000,000,000
+    case EVO: return 8; // 21,000,000 (# digits, without commas)
+    case mEVO: return 11; // 21,000,000,000
+    case uEVO: return 14; // 21,000,000,000,000
     default: return 0;
     }
 }
@@ -78,9 +78,9 @@ int EvotionUnits::decimals(int unit)
 {
     switch(unit)
     {
-    case BTC: return 8;
-    case mBTC: return 5;
-    case uBTC: return 2;
+    case EVO: return 8;
+    case mEVO: return 5;
+    case uEVO: return 2;
     default: return 0;
     }
 }

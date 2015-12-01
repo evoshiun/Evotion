@@ -35,7 +35,7 @@ tradingDialog::tradingDialog(QWidget *parent) :
     ui->BuyCostLabel->setPalette(sample_palette);
     ui->SellCostLabel->setPalette(sample_palette);
     ui->EVOAvailableLabel->setPalette(sample_palette);
-    ui->BtcAvailableLbl_2->setPalette(sample_palette);
+    ui->EvoAvailableLbl_2->setPalette(sample_palette);
     //Set tabs to inactive
     ui->TradingTabWidget->setTabEnabled(0,false);
     ui->TradingTabWidget->setTabEnabled(1,false);
@@ -45,15 +45,15 @@ tradingDialog::tradingDialog(QWidget *parent) :
 
 
     /*OrderBook Table Init*/
-    CreateOrderBookTables(*ui->BidsTable,QStringList() << "TOTAL(BTC)"<< "EVO(SIZE)" << "BID(BTC)");
-    CreateOrderBookTables(*ui->AsksTable,QStringList() << "ASK(BTC)"  << "EVO(SIZE)" << "TOTAL(BTC)");
+    CreateOrderBookTables(*ui->BidsTable,QStringList() << "TOTAL(EVO)"<< "EVO(SIZE)" << "BID(EVO)");
+    CreateOrderBookTables(*ui->AsksTable,QStringList() << "ASK(EVO)"  << "EVO(SIZE)" << "TOTAL(EVO)");
     /*OrderBook Table Init*/
 
     /*Market History Table Init*/
     ui->MarketHistoryTable->setColumnCount(5);
     ui->MarketHistoryTable->verticalHeader()->setVisible(false);
 
-    ui->MarketHistoryTable->setHorizontalHeaderLabels(QStringList()<<"DATE"<<"BUY/SELL"<<"BID/ASK"<<"TOTAL UNITS(EVO)"<<"TOTAL COST(BTC");
+    ui->MarketHistoryTable->setHorizontalHeaderLabels(QStringList()<<"DATE"<<"BUY/SELL"<<"BID/ASK"<<"TOTAL UNITS(EVO)"<<"TOTAL COST(EVO");
     ui->MarketHistoryTable->setRowCount(0);
 
     int Cellwidth =  ui->MarketHistoryTable->width() / 5;
@@ -149,18 +149,18 @@ void tradingDialog::UpdaterFunction(){
 
 QString tradingDialog::GetMarketSummary(){
 
-     QString Response = sendRequest("https://bittrex.com/api/v1.1/public/GetMarketSummary?market=btc-EVO");
+     QString Response = sendRequest("https://bittrex.com/api/v1.1/public/GetMarketSummary?market=evo-EVO");
      return Response;
 }
 
 QString tradingDialog::GetOrderBook(){
 
-      QString  Response = sendRequest("https://bittrex.com/api/v1.1/public/getorderbook?market=BTC-EVO&type=both&depth=50");
+      QString  Response = sendRequest("https://bittrex.com/api/v1.1/public/getorderbook?market=EVO-EVO&type=both&depth=50");
       return Response;
 }
 
 QString tradingDialog::GetMarketHistory(){
-      QString Response = sendRequest("https://bittrex.com/api/v1.1/public/getmarkethistory?market=BTC-EVO&count=100");
+      QString Response = sendRequest("https://bittrex.com/api/v1.1/public/getmarkethistory?market=EVO-EVO&count=100");
       return Response;
 }
 
@@ -182,7 +182,7 @@ QString tradingDialog::BuyEVO(QString OrderType, double Quantity, double Rate){
             URL += OrderType;
             URL += "?apikey=";
             URL += this->ApiKey;
-            URL += "&nonce=12345434&market=BTC-EVO&quantity=";
+            URL += "&nonce=12345434&market=EVO-EVO&quantity=";
             URL += str.number(Quantity,'i',8);
             URL += "&rate=";
             URL += str.number(Rate,'i',8);
@@ -198,7 +198,7 @@ QString tradingDialog::SellEVO(QString OrderType, double Quantity, double Rate){
             URL += OrderType;
             URL += "?apikey=";
             URL += this->ApiKey;
-            URL += "&nonce=12345434&market=BTC-EVO&quantity=";
+            URL += "&nonce=12345434&market=EVO-EVO&quantity=";
             URL += str.number(Quantity,'i',8);
             URL += "&rate=";
             URL += str.number(Rate,'i',8);
@@ -210,7 +210,7 @@ QString tradingDialog::SellEVO(QString OrderType, double Quantity, double Rate){
 QString tradingDialog::GetOpenOrders(){
     QString URL = "https://bittrex.com/api/v1.1/market/getopenorders?apikey=";
             URL += this->ApiKey;
-            URL += "&nonce=12345434&market=BTC-EVO";
+            URL += "&nonce=12345434&market=EVO-EVO";
 
     QString Response = sendRequest(URL);
     return Response;
@@ -241,7 +241,7 @@ QString tradingDialog::GetAccountHistory(){
 
     QString URL = "https://bittrex.com/api/v1.1/account/getorderhistory?apikey=";
             URL += this->ApiKey;
-            URL += "&nonce=12345434&market=BTC-EVO&count=10";
+            URL += "&nonce=12345434&market=EVO-EVO&count=10";
 
     QString Response = sendRequest(URL);
     return Response;
@@ -259,15 +259,15 @@ int tradingDialog::SetExchangeInfoTextLabels(){
     ui->Bid->setTextFormat(Qt::RichText);
     ui->Ask->setTextFormat(Qt::RichText);
     ui->volumet->setTextFormat(Qt::RichText);
-    ui->volumebtc->setTextFormat(Qt::RichText);
+    ui->volumeevo->setTextFormat(Qt::RichText);
 
-    ui->Ask->setText("<b>Ask:</b> <span style='font-weight:bold; font-size:14px; color:Red'>" + str.number(obj["Ask"].toDouble(),'i',8) + "</span> BTC");
+    ui->Ask->setText("<b>Ask:</b> <span style='font-weight:bold; font-size:14px; color:Red'>" + str.number(obj["Ask"].toDouble(),'i',8) + "</span> EVO");
 
-    ui->Bid->setText("<b>Bid:</b> <span style='font-weight:bold; font-size:14px; color:Green;'>" + str.number(obj["Bid"].toDouble(),'i',8) + "</span> BTC");
+    ui->Bid->setText("<b>Bid:</b> <span style='font-weight:bold; font-size:14px; color:Green;'>" + str.number(obj["Bid"].toDouble(),'i',8) + "</span> EVO");
 
     ui->volumet->setText("<b>EVO Volume:</b> <span style='font-weight:bold; font-size:14px; color:blue;'>" + str.number(obj["Volume"].toDouble(),'i',8) + "</span> EVO");
 
-    ui->volumebtc->setText("<b>BTC Volume:</b> <span style='font-weight:bold; font-size:14px; color:blue;'>" + str.number(obj["BaseVolume"].toDouble(),'i',8) + "</span> BTC");
+    ui->volumeevo->setText("<b>EVO Volume:</b> <span style='font-weight:bold; font-size:14px; color:blue;'>" + str.number(obj["BaseVolume"].toDouble(),'i',8) + "</span> EVO");
 
     obj.empty();
 
@@ -446,8 +446,8 @@ void tradingDialog::ParseAndPopulateOrderBookTables(QString OrderBook){
 
     double EVOSupply = 0;
     double EVODemand = 0;
-    double BtcSupply  = 0;
-    double BtcDemand  = 0;
+    double EvoSupply  = 0;
+    double EvoDemand  = 0;
 
     ui->AsksTable->setRowCount(0);
 
@@ -460,7 +460,7 @@ void tradingDialog::ParseAndPopulateOrderBookTables(QString OrderBook){
         double a = (x * y);
 
         EVOSupply = EVOSupply + y;
-        BtcSupply  = BtcSupply  + a;
+        EvoSupply  = EvoSupply  + a;
 
         AskRows = ui->AsksTable->rowCount();
         ui->AsksTable->insertRow(AskRows);
@@ -482,7 +482,7 @@ void tradingDialog::ParseAndPopulateOrderBookTables(QString OrderBook){
         double a = (x * y);
 
         EVODemand = EVODemand + y;
-        BtcDemand  = BtcDemand  + a;
+        EvoDemand  = EvoDemand  + a;
 
         BidRows = ui->BidsTable->rowCount();
         ui->BidsTable->insertRow(BidRows);
@@ -493,12 +493,12 @@ void tradingDialog::ParseAndPopulateOrderBookTables(QString OrderBook){
      }
 
         ui->EVOSupply->setText("<b>Supply:</b> <span style='font-weight:bold; font-size:14px; color:blue'>" + str.number(EVOSupply,'i',8) + "</span><b> EVO</b>");
-        ui->BtcSupply->setText("<span style='font-weight:bold; font-size:14px; color:blue'>" + str.number(BtcSupply,'i',8) + "</span><b> BTC</b>");
+        ui->EvoSupply->setText("<span style='font-weight:bold; font-size:14px; color:blue'>" + str.number(EvoSupply,'i',8) + "</span><b> EVO</b>");
         ui->AsksCount->setText("<b>Ask's :</b> <span style='font-weight:bold; font-size:14px; color:blue'>" + str.number(ui->AsksTable->rowCount()) + "</span>");
 
 
         ui->EVODemand->setText("<b>Demand:</b> <span style='font-weight:bold; font-size:14px; color:blue'>" + str.number(EVODemand,'i',8) + "</span><b> EVO</b>");
-        ui->BtcDemand->setText("<span style='font-weight:bold; font-size:14px; color:blue'>" + str.number(BtcDemand,'i',8) + "</span><b> BTC</b>");
+        ui->EvoDemand->setText("<span style='font-weight:bold; font-size:14px; color:blue'>" + str.number(EvoDemand,'i',8) + "</span><b> EVO</b>");
         ui->BidsCount->setText("<b>Bid's :</b> <span style='font-weight:bold; font-size:14px; color:blue'>" + str.number(ui->BidsTable->rowCount()) + "</span>");
   obj.empty();
 }
@@ -544,12 +544,12 @@ void tradingDialog::ActionsOnSwitch(int index = -1){
                            Response = GetMarketSummary();
                            if(Response.size() > 0 && Response != "Error"){
 
-                               QString balance = GetBalance("BTC");
+                               QString balance = GetBalance("EVO");
 
                                QString str;
                                QJsonObject ResultObject =  GetResultObjectFromJSONObject(balance);
 
-                               ui->BtcAvailableLbl->setText(str.number(ResultObject["Available"].toDouble(),'i',8));
+                               ui->EvoAvailableLbl->setText(str.number(ResultObject["Available"].toDouble(),'i',8));
                              }
 
                 break;
@@ -599,9 +599,9 @@ void tradingDialog::ActionsOnSwitch(int index = -1){
                 break;
 
                 case 6://show balance tab
-                       Response = GetBalance("BTC");
+                       Response = GetBalance("EVO");
                          if(Response.size() > 0 && Response != "Error"){
-                          DisplayBalance(*ui->EvotionBalanceLabel,*ui->EvotionAvailableLabel,*ui->EvotionPendingLabel, QString::fromUtf8("BTC"),Response);
+                          DisplayBalance(*ui->EvotionBalanceLabel,*ui->EvotionAvailableLabel,*ui->EvotionPendingLabel, QString::fromUtf8("EVO"),Response);
                          }
 
                          Response = GetBalance("EVO");
@@ -740,7 +740,7 @@ void tradingDialog::on_GenDepositBTN_clicked()
 
 void tradingDialog::on_Sell_Max_Amount_clicked()
 {
-    //calculate amount of BTC that can be gained from selling EVO available balance
+    //calculate amount of EVO that can be gained from selling EVO available balance
     QString responseA = GetBalance("EVO");
     QString str;
     QJsonObject ResultObject =  GetResultObjectFromJSONObject(responseA);
@@ -752,8 +752,8 @@ void tradingDialog::on_Sell_Max_Amount_clicked()
 
 void tradingDialog::on_Buy_Max_Amount_clicked()
 {
-    //calculate amount of currency than can be brought with the BTC balance available
-    QString responseA = GetBalance("BTC");
+    //calculate amount of currency than can be brought with the EVO balance available
+    QString responseA = GetBalance("EVO");
     QString responseB = GetMarketSummary();
     QString str;
 
@@ -763,9 +763,9 @@ void tradingDialog::on_Buy_Max_Amount_clicked()
     //Get the Bid ask or last value from combo
     QString value = ui->BuyBidcomboBox->currentText();
 
-    double AvailableBTC = ResultObject["Available"].toDouble();
+    double AvailableEVO = ResultObject["Available"].toDouble();
     double CurrentASK   = ResultObj[value].toDouble();
-    double Result = (AvailableBTC / CurrentASK);
+    double Result = (AvailableEVO / CurrentASK);
     double percentofnumber = (Result * 0.0025);
 
     Result = Result - percentofnumber;
@@ -890,7 +890,7 @@ void tradingDialog::on_BuyEVO_clicked()
             Msg += ui->UnitsInput->text();
             Msg += "EVO @ ";
             Msg += ui->BuyBidPriceEdit->text();
-            Msg += " BTC Each";
+            Msg += " EVO Each";
 
             QMessageBox::StandardButton reply;
     reply = QMessageBox::question(this,"Buy Order",Msg,QMessageBox::Yes|QMessageBox::No);
@@ -932,7 +932,7 @@ void tradingDialog::on_SellEVOBTN_clicked()
             Msg += ui->UnitsInputEVO->text();
             Msg += " EVO @ ";
             Msg += ui->SellBidPriceEdit->text();
-            Msg += " BTC Each";
+            Msg += " EVO Each";
 
             QMessageBox::StandardButton reply;
     reply = QMessageBox::question(this,"Sell Order",Msg,QMessageBox::Yes|QMessageBox::No);

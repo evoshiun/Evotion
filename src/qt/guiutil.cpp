@@ -107,7 +107,7 @@ bool parseEvotionURI(const QUrl &uri, SendCoinsRecipient *out)
         {
             if(!i->second.isEmpty())
             {
-                if(!EvotionUnits::parse(EvotionUnits::BTC, i->second, &rv.amount))
+                if(!EvotionUnits::parse(EvotionUnits::EVO, i->second, &rv.amount))
                 {
                     return false;
                 }

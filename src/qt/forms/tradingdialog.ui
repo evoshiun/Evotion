@@ -133,7 +133,7 @@
       </rect>
      </property>
      <property name="text">
-      <string>BTC</string>
+      <string>EVO</string>
      </property>
     </widget>
     <widget class="QLabel" name="label_6">
@@ -241,12 +241,12 @@
          </font>
         </property>
         <property name="text">
-         <string>BTC Available:</string>
+         <string>EVO Available:</string>
         </property>
        </widget>
       </item>
       <item>
-       <widget class="QLabel" name="BtcAvailableLbl">
+       <widget class="QLabel" name="EvoAvailableLbl">
         <property name="palette">
          <palette>
           <active>
@@ -677,7 +677,7 @@
        </widget>
       </item>
       <item>
-       <widget class="QLabel" name="BtcAvailableLbl_2">
+       <widget class="QLabel" name="EvoAvailableLbl_2">
         <property name="font">
          <font>
           <weight>75</weight>
@@ -685,7 +685,7 @@
          </font>
         </property>
         <property name="text">
-         <string>BTC</string>
+         <string>EVO</string>
         </property>
        </widget>
       </item>
@@ -1157,7 +1157,7 @@
          </font>
         </property>
         <property name="text">
-         <string>BTC</string>
+         <string>EVO</string>
         </property>
        </widget>
       </item>
@@ -1178,7 +1178,7 @@
       </rect>
      </property>
      <property name="text">
-      <string>BTC</string>
+      <string>EVO</string>
      </property>
     </widget>
     <widget class="QComboBox" name="SellBidcomboBox">
@@ -2281,7 +2281,7 @@
          </font>
         </property>
         <property name="text">
-         <string> BTC</string>
+         <string> EVO</string>
         </property>
        </widget>
       </item>
@@ -2384,7 +2384,7 @@
       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
      </property>
     </widget>
-    <widget class="QLabel" name="BtcDemand">
+    <widget class="QLabel" name="EvoDemand">
      <property name="geometry">
       <rect>
        <x>220</x>
@@ -2400,7 +2400,7 @@
       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
      </property>
     </widget>
-    <widget class="QLabel" name="BtcSupply">
+    <widget class="QLabel" name="EvoSupply">
      <property name="geometry">
       <rect>
        <x>630</x>
@@ -2553,7 +2553,7 @@
       </font>
      </property>
      <property name="text">
-      <string>BTC Balance:</string>
+      <string>EVO Balance:</string>
      </property>
     </widget>
     <widget class="QLabel" name="EVOAvailableLabel">
@@ -2636,7 +2636,7 @@
       </font>
      </property>
      <property name="text">
-      <string>BTC Available</string>
+      <string>EVO Available</string>
      </property>
     </widget>
     <widget class="QLabel" name="EvotionAvailableLabel">
@@ -2668,7 +2668,7 @@
       </font>
      </property>
      <property name="text">
-      <string>BTC Pending</string>
+      <string>EVO Pending</string>
      </property>
     </widget>
     <widget class="QLabel" name="EvotionPendingLabel">
@@ -2983,7 +2983,7 @@
   </widget>
   </item>
   <item>
-  <widget class="QLabel" name="volumebtc">
+  <widget class="QLabel" name="volumeevo">
    <property name="geometry">
     <rect>
      <x>355</x>
